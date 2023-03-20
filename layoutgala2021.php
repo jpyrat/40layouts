@@ -362,7 +362,7 @@ case 17:
 #container {
 	grid-template-areas: 
 		"header header header"
-		"navigation extra content"
+		"extra navigation content"
 		"footer footer footer";
 	grid-template-rows: auto auto auto;
 	grid-template-columns: 240px 240px 1fr;
@@ -374,7 +374,7 @@ case 18:
 #container {
 	grid-template-areas: 
 		"header header header"
-		"extra navigation content"
+		"navigation extra content"
 		"footer footer footer";
 	grid-template-rows: auto auto auto;
 	grid-template-columns: 240px 240px 1fr;
