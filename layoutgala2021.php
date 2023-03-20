@@ -47,45 +47,47 @@ div#content{background: #fff;}
 
 
 /* Mode mobile ici sans media queries */
-#container {
-	display: grid;
-	grid-template-areas: 
-		"header"
-		"content"
-		"navigation"
-		"extra"
-		"footer";
-	grid-template-rows: auto auto auto auto auto;
-	grid-template-columns: 1fr;
-}
-
-
-#header {
-	grid-area: header;
-}
-#footer {
-	grid-area: footer;
-}
-
-#navigation{
-	grid-area: navigation;
-}
-
-#wrapper{
-	grid-area: content;
-}
-
-#content {
-	display: grid;
-	height: 100%;
-    align-content: flex-start;
-}
-
-#extra{
-	grid-area: extra;
-}
 
 @media screen and (min-width: 768px) {
+	#container {
+		display: grid;
+		grid-template-areas: 
+			"header"
+			"content"
+			"navigation"
+			"extra"
+			"footer";
+		grid-template-rows: auto auto auto auto auto;
+		grid-template-columns: 1fr;
+	}
+
+
+	#header {
+		grid-area: header;
+	}
+	#footer {
+		grid-area: footer;
+	}
+
+	#navigation{
+		grid-area: navigation;
+	}
+
+	#wrapper{
+		grid-area: content;
+	}
+
+	#content {
+		display: grid;
+		height: 100%;
+		align-content: flex-start;
+	}
+
+	#extra{
+		grid-area: extra;
+	}
+
+
 /* un switch avec 2 types de cas  pour ipad*/
 <?php 
 switch ($layout){
@@ -120,15 +122,15 @@ switch ($layout){
 	case 38:
 	case 39:
 ?>
-#container {
-	grid-template-areas: 
-		"header header"
-		"content content"
-		"navigation extra"
-		"footer footer";
-	grid-template-rows: auto auto auto auto;
-	grid-template-columns: 1fr 1fr;
-}
+	#container {
+		grid-template-areas: 
+			"header header"
+			"content content"
+			"navigation extra"
+			"footer footer";
+		grid-template-rows: auto auto auto auto;
+		grid-template-columns: 1fr 1fr;
+	}
 
 <?php
 	break;
@@ -144,15 +146,15 @@ switch ($layout){
 	case 28:
 	case 40:
 ?>
-#container {
-	grid-template-areas: 
-		"header header"
-		"content content"
-		"extra navigation"
-		"footer footer";
-	grid-template-rows: auto auto auto auto;
-	grid-template-columns: 1fr 1fr;
-}
+	#container {
+		grid-template-areas: 
+			"header header"
+			"content content"
+			"extra navigation"
+			"footer footer";
+		grid-template-rows: auto auto auto auto;
+		grid-template-columns: 1fr 1fr;
+	}
 
 <?php
 	break;
@@ -167,318 +169,318 @@ switch ($layout){
 switch ($layout) {
 case 1: 
 ?>
-#container {
-	grid-template-areas: 
-		"header header header"
-		"navigation content extra"
-		"footer footer footer";
-	grid-template-rows: auto auto auto;
-	grid-template-columns: 1fr 2fr 1fr;
-}
+	#container {
+		grid-template-areas: 
+			"header header header"
+			"navigation content extra"
+			"footer footer footer";
+		grid-template-rows: auto auto auto;
+		grid-template-columns: 1fr 2fr 1fr;
+	}
 <?php
    break;
 case 2:
 ?>
-#container {
-	grid-template-areas: 
-		"header header header"
-		"extra content navigation"
-		"footer footer footer";
-	grid-template-rows: auto auto auto;
-	grid-template-columns: 1fr 2fr 1fr;
-}
+	#container {
+		grid-template-areas: 
+			"header header header"
+			"extra content navigation"
+			"footer footer footer";
+		grid-template-rows: auto auto auto;
+		grid-template-columns: 1fr 2fr 1fr;
+	}
 <?php
 	break;
 case 3:
 ?>
-#container {
-	grid-template-areas: 
-		"header header header"
-		"content navigation extra"
-		"footer footer footer";
-	grid-template-rows: auto auto auto;
-	grid-template-columns: 2fr 1fr 1fr;
-}
+	#container {
+		grid-template-areas: 
+			"header header header"
+			"content navigation extra"
+			"footer footer footer";
+		grid-template-rows: auto auto auto;
+		grid-template-columns: 2fr 1fr 1fr;
+	}
 <?php
 	break;
 case 4:
 ?>
-#container {
-	grid-template-areas: 
-		"header header header"
-		"content extra navigation"
-		"footer footer footer";
-	grid-template-rows: auto auto auto;
-	grid-template-columns: 2fr 1fr 1fr;
-}
+	#container {
+		grid-template-areas: 
+			"header header header"
+			"content extra navigation"
+			"footer footer footer";
+		grid-template-rows: auto auto auto;
+		grid-template-columns: 2fr 1fr 1fr;
+	}
 <?php
 	break;
 case 5:
 ?>
-#container {
-	grid-template-areas: 
-		"header header header"
-		"navigation extra content"
-		"footer footer footer";
-	grid-template-rows: auto auto auto;
-	grid-template-columns: 1fr 1fr 2fr;
-}
+	#container {
+		grid-template-areas: 
+			"header header header"
+			"navigation extra content"
+			"footer footer footer";
+		grid-template-rows: auto auto auto;
+		grid-template-columns: 1fr 1fr 2fr;
+	}
 <?php
 	break;
 case 6:
 ?>
-#container {
-	grid-template-areas: 
-		"header header header"
-		"extra navigation content"
-		"footer footer footer";
-	grid-template-rows: auto auto auto;
-	grid-template-columns: 1fr 1fr 2fr;
-}
+	#container {
+		grid-template-areas: 
+			"header header header"
+			"extra navigation content"
+			"footer footer footer";
+		grid-template-rows: auto auto auto;
+		grid-template-columns: 1fr 1fr 2fr;
+	}
 <?php
 	break;
 case 7:
 ?>
-#container {
-	grid-template-areas: 
-		"header header header header header"
-		". navigation content extra ."
-		"footer footer footer footer footer";
-	grid-template-rows: auto auto auto;
-	grid-template-columns: auto 240px calc(1160px - 240px - 240px) 240px auto;
-}
+	#container {
+		grid-template-areas: 
+			"header header header header header"
+			". navigation content extra ."
+			"footer footer footer footer footer";
+		grid-template-rows: auto auto auto;
+		grid-template-columns: auto 240px calc(1160px - 240px - 240px) 240px auto;
+	}
 <?php
 	break;
 case 8:
 ?>
-#container {
-	grid-template-areas: 
-		"header header header header header"
-		". extra content navigation ."
-		"footer footer footer footer footer";
-	grid-template-rows: auto auto auto;
-	grid-template-columns: auto 240px calc(1160px - 240px - 240px) 240px auto;
-}
+	#container {
+		grid-template-areas: 
+			"header header header header header"
+			". extra content navigation ."
+			"footer footer footer footer footer";
+		grid-template-rows: auto auto auto;
+		grid-template-columns: auto 240px calc(1160px - 240px - 240px) 240px auto;
+	}
 <?php
 	break;
 case 9:
 ?>
-#container {
-	grid-template-areas: 
-		"header header header header header"
-		". content navigation extra ."
-		"footer footer footer footer footer";
-	grid-template-rows: auto auto auto;
-	grid-template-columns: auto calc(1160px - 240px - 240px) 240px 240px auto;
-}
+	#container {
+		grid-template-areas: 
+			"header header header header header"
+			". content navigation extra ."
+			"footer footer footer footer footer";
+		grid-template-rows: auto auto auto;
+		grid-template-columns: auto calc(1160px - 240px - 240px) 240px 240px auto;
+	}
 <?php
 	break;
 case 10:
 ?>
-#container {
-	grid-template-areas: 
-		"header header header header header"
-		". content extra navigation ."
-		"footer footer footer footer footer";
-	grid-template-rows: auto auto auto;
-	grid-template-columns: auto calc(1160px - 240px - 240px) 240px 240px auto;
-}
+	#container {
+		grid-template-areas: 
+			"header header header header header"
+			". content extra navigation ."
+			"footer footer footer footer footer";
+		grid-template-rows: auto auto auto;
+		grid-template-columns: auto calc(1160px - 240px - 240px) 240px 240px auto;
+	}
 <?php
 	break;
 case 11:
 ?>
-#container {
-	grid-template-areas: 
-		"header header header header header"
-		". navigation extra content ."
-		"footer footer footer footer footer";
-	grid-template-rows: auto auto auto;
-	grid-template-columns: auto 240px 240px calc(1160px - 240px - 240px) auto;
-}
+	#container {
+		grid-template-areas: 
+			"header header header header header"
+			". navigation extra content ."
+			"footer footer footer footer footer";
+		grid-template-rows: auto auto auto;
+		grid-template-columns: auto 240px 240px calc(1160px - 240px - 240px) auto;
+	}
 <?php
 	break;
 case 12:
 ?>
-#container {
-	grid-template-areas: 
-		"header header header header header"
-		". extra navigation content ."
-		"footer footer footer footer footer";
-	grid-template-rows: auto auto auto;
-	grid-template-columns: auto 240px 240px calc(1160px - 240px - 240px) auto;
-}
+	#container {
+		grid-template-areas: 
+			"header header header header header"
+			". extra navigation content ."
+			"footer footer footer footer footer";
+		grid-template-rows: auto auto auto;
+		grid-template-columns: auto 240px 240px calc(1160px - 240px - 240px) auto;
+	}
 <?php
 	break;
 case 13:
 ?>
-#container {
-	grid-template-areas: 
-		"header header header"
-		"navigation content extra"
-		"footer footer footer";
-	grid-template-rows: auto auto auto;
-	grid-template-columns: 240px 1fr 240px;
-}
+	#container {
+		grid-template-areas: 
+			"header header header"
+			"navigation content extra"
+			"footer footer footer";
+		grid-template-rows: auto auto auto;
+		grid-template-columns: 240px 1fr 240px;
+	}
 <?php
 	break;
 case 14:
 ?>
-#container {
-	grid-template-areas: 
-		"header header header"
-		"extra content navigation"
-		"footer footer footer";
-	grid-template-rows: auto auto auto;
-	grid-template-columns: 240px 1fr 240px;
-}
+	#container {
+		grid-template-areas: 
+			"header header header"
+			"extra content navigation"
+			"footer footer footer";
+		grid-template-rows: auto auto auto;
+		grid-template-columns: 240px 1fr 240px;
+	}
 <?php
 	break;
 case 15:
 ?>
-#container {
-	grid-template-areas: 
-		"header header header"
-		"content navigation extra"
-		"footer footer footer";
-	grid-template-rows: auto auto auto;
-	grid-template-columns: 1fr 240px 240px;
-}
+	#container {
+		grid-template-areas: 
+			"header header header"
+			"content navigation extra"
+			"footer footer footer";
+		grid-template-rows: auto auto auto;
+		grid-template-columns: 1fr 240px 240px;
+	}
 <?php
 	break;
 case 16:
 ?>
-#container {
-	grid-template-areas: 
-		"header header header"
-		"content extra navigation"
-		"footer footer footer";
-	grid-template-rows: auto auto auto;
-	grid-template-columns: 1fr 240px 240px;
-}
+	#container {
+		grid-template-areas: 
+			"header header header"
+			"content extra navigation"
+			"footer footer footer";
+		grid-template-rows: auto auto auto;
+		grid-template-columns: 1fr 240px 240px;
+	}
 <?php
 	break;
 case 17:
 ?>
-#container {
-	grid-template-areas: 
-		"header header header"
-		"extra navigation content"
-		"footer footer footer";
-	grid-template-rows: auto auto auto;
-	grid-template-columns: 240px 240px 1fr;
-}
+	#container {
+		grid-template-areas: 
+			"header header header"
+			"extra navigation content"
+			"footer footer footer";
+		grid-template-rows: auto auto auto;
+		grid-template-columns: 240px 240px 1fr;
+	}
 <?php
 	break;
 case 18:
 ?>
-#container {
-	grid-template-areas: 
-		"header header header"
-		"navigation extra content"
-		"footer footer footer";
-	grid-template-rows: auto auto auto;
-	grid-template-columns: 240px 240px 1fr;
-}
+	#container {
+		grid-template-areas: 
+			"header header header"
+			"navigation extra content"
+			"footer footer footer";
+		grid-template-rows: auto auto auto;
+		grid-template-columns: 240px 240px 1fr;
+	}
 <?php
 	break;
 case 19:
 ?>
-#container {
-	grid-template-areas: 
-		"header header header"
-		"navigation content extra"
-		"footer footer footer";
-	grid-template-rows: auto auto auto;
-	grid-template-columns: 240px 2fr 1fr;
-}
+	#container {
+		grid-template-areas: 
+			"header header header"
+			"navigation content extra"
+			"footer footer footer";
+		grid-template-rows: auto auto auto;
+		grid-template-columns: 240px 2fr 1fr;
+	}
 <?php
 	break;
 case 20:
 ?>
-#container {
-	grid-template-areas: 
-		"header header header"
-		"navigation content extra"
-		"footer footer footer";
-	grid-template-rows: auto auto auto;
-	grid-template-columns: 1fr 2fr 240px;
-}
+	#container {
+		grid-template-areas: 
+			"header header header"
+			"navigation content extra"
+			"footer footer footer";
+		grid-template-rows: auto auto auto;
+		grid-template-columns: 1fr 2fr 240px;
+	}
 <?php
 	break;
 case 21:
 ?>
-#container {
-	grid-template-areas: 
-		"header header header"
-		"content navigation extra"
-		"footer footer footer";
-	grid-template-rows: auto auto auto;
-	grid-template-columns: 2fr 240px 1fr;
-}
+	#container {
+		grid-template-areas: 
+			"header header header"
+			"content navigation extra"
+			"footer footer footer";
+		grid-template-rows: auto auto auto;
+		grid-template-columns: 2fr 240px 1fr;
+	}
 <?php
 	break;
 case 22:
 ?>
-#container {
-	grid-template-areas: 
-		"header header header"
-		"content navigation extra"
-		"footer footer footer";
-	grid-template-rows: auto auto auto;
-	grid-template-columns: 2fr 1fr 240px;
-}
+	#container {
+		grid-template-areas: 
+			"header header header"
+			"content navigation extra"
+			"footer footer footer";
+		grid-template-rows: auto auto auto;
+		grid-template-columns: 2fr 1fr 240px;
+	}
 <?php
 	break;
 case 23:
 ?>
-#container {
-	grid-template-areas: 
-		"header header"
-		"content navigation"
-		"content extra"
-		"footer footer";
-	grid-template-rows: auto auto 1fr auto;
-	grid-template-columns: 1fr 240px;
-}
+	#container {
+		grid-template-areas: 
+			"header header"
+			"content navigation"
+			"content extra"
+			"footer footer";
+		grid-template-rows: auto auto 1fr auto;
+		grid-template-columns: 1fr 240px;
+	}
 <?php
 	break;
 case 24:
 ?>
-#container {
-	grid-template-areas: 
-		"header header"
-		"navigation content"
-		"extra content"
-		"footer footer";
-	grid-template-rows: auto auto 1fr auto;
-	grid-template-columns: 240px 1fr;
-}
+	#container {
+		grid-template-areas: 
+			"header header"
+			"navigation content"
+			"extra content"
+			"footer footer";
+		grid-template-rows: auto auto 1fr auto;
+		grid-template-columns: 240px 1fr;
+	}
 <?php
 	break;
 case 25:
 ?>
-#container {
-	grid-template-areas: 
-		"header header"
-		"content navigation"
-		"content extra"
-		"footer footer";
-	grid-template-rows: auto auto 1fr auto;
-	grid-template-columns: 2fr 1fr;
-}
+	#container {
+		grid-template-areas: 
+			"header header"
+			"content navigation"
+			"content extra"
+			"footer footer";
+		grid-template-rows: auto auto 1fr auto;
+		grid-template-columns: 2fr 1fr;
+	}
 <?php
 	break;
 case 26:
 ?>
-#container {
-	grid-template-areas: 
-		"header header"
-		"navigation content"
-		"extra content"
-		"footer footer";
-	grid-template-rows: auto auto 1fr auto;
-	grid-template-columns: 1fr 2fr;
-}
+	#container {
+		grid-template-areas: 
+			"header header"
+			"navigation content"
+			"extra content"
+			"footer footer";
+		grid-template-rows: auto auto 1fr auto;
+		grid-template-columns: 1fr 2fr;
+	}
 <?php
 	break;
 case 27:
@@ -491,158 +493,158 @@ case 28:
 	break;
 case 29:
 ?>
-#container {
-	grid-template-areas: 
-		"header header"
-		"navigation content"
-		"extra extra"
-		"footer footer";
-	grid-template-rows: auto auto auto auto;
-	grid-template-columns: 1fr 2fr;
-}
+	#container {
+		grid-template-areas: 
+			"header header"
+			"navigation content"
+			"extra extra"
+			"footer footer";
+		grid-template-rows: auto auto auto auto;
+		grid-template-columns: 1fr 2fr;
+	}
 <?php
 	break;
 case 30:
 ?>
-#container {
-	grid-template-areas: 
-		"header header"
-		"content navigation"
-		"extra extra"
-		"footer footer";
-	grid-template-rows: auto auto auto auto;
-	grid-template-columns: 2fr 1fr;
-}
+	#container {
+		grid-template-areas: 
+			"header header"
+			"content navigation"
+			"extra extra"
+			"footer footer";
+		grid-template-rows: auto auto auto auto;
+		grid-template-columns: 2fr 1fr;
+	}
 <?php
 	break;
 case 31:
 ?>
-#container {
-	grid-template-areas: 
-		"header header"
-		"navigation content"
-		"extra extra"
-		"footer footer";
-	grid-template-rows: auto auto auto auto;
-	grid-template-columns: 240px 1fr;
-}
+	#container {
+		grid-template-areas: 
+			"header header"
+			"navigation content"
+			"extra extra"
+			"footer footer";
+		grid-template-rows: auto auto auto auto;
+		grid-template-columns: 240px 1fr;
+	}
 <?php
 	break;
 case 32:
 ?>
-#container {
-	grid-template-areas: 
-		"header header"
-		"content navigation"
-		"extra extra"
-		"footer footer";
-	grid-template-rows: auto auto auto auto;
-	grid-template-columns: 1fr 240px;
-}
+	#container {
+		grid-template-areas: 
+			"header header"
+			"content navigation"
+			"extra extra"
+			"footer footer";
+		grid-template-rows: auto auto auto auto;
+		grid-template-columns: 1fr 240px;
+	}
 <?php
 	break;
 case 33:
 ?>
-#container {
-	grid-template-areas: 
-		"header header header header"
-		". content navigation ."
-		". content extra ."
-		"footer footer footer footer";
-	grid-template-rows: auto auto 1fr auto;
-	grid-template-columns: auto calc(1160px - 240px) 240px auto;
-}
+	#container {
+		grid-template-areas: 
+			"header header header header"
+			". content navigation ."
+			". content extra ."
+			"footer footer footer footer";
+		grid-template-rows: auto auto 1fr auto;
+		grid-template-columns: auto calc(1160px - 240px) 240px auto;
+	}
 <?php
 	break;
 case 34:
 ?>
-#container {
-	grid-template-areas: 
-		"header header header header"
-		". navigation content ."
-		". extra content ."
-		"footer footer footer footer";
-	grid-template-rows: auto auto 1fr auto;
-	grid-template-columns: auto 240px calc(1160px - 240px) auto;
-}
+	#container {
+		grid-template-areas: 
+			"header header header header"
+			". navigation content ."
+			". extra content ."
+			"footer footer footer footer";
+		grid-template-rows: auto auto 1fr auto;
+		grid-template-columns: auto 240px calc(1160px - 240px) auto;
+	}
 <?php
 	break;
 case 35:
 ?>
-#container {
-	grid-template-areas: 
-		"header header header header"
-		". content navigation ."
-		". extra navigation ."
-		"footer footer footer footer";
-	grid-template-rows: auto auto 1fr auto;
-	grid-template-columns: auto calc(1160px - 240px) 240px auto;
-}
+	#container {
+		grid-template-areas: 
+			"header header header header"
+			". content navigation ."
+			". extra navigation ."
+			"footer footer footer footer";
+		grid-template-rows: auto auto 1fr auto;
+		grid-template-columns: auto calc(1160px - 240px) 240px auto;
+	}
 <?php
 	break;
 case 36:
 ?>
-#container {
-	grid-template-areas: 
-		"header header header header"
-		". navigation content ."
-		". navigation extra ."
-		"footer footer footer footer";
-	grid-template-rows: auto auto 1fr auto;
-	grid-template-columns: auto 240px calc(1160px - 240px) auto;
-}
+	#container {
+		grid-template-areas: 
+			"header header header header"
+			". navigation content ."
+			". navigation extra ."
+			"footer footer footer footer";
+		grid-template-rows: auto auto 1fr auto;
+		grid-template-columns: auto 240px calc(1160px - 240px) auto;
+	}
 <?php
 	break;
 case 37:
 ?>
-#container {
-	grid-template-areas: 
-		"header header header header"
-		". content navigation ."
-		". extra extra ."
-		"footer footer footer footer";
-	grid-template-rows: auto auto 1fr auto;
-	grid-template-columns: auto calc(1160px - 240px) 240px auto;
-}
+	#container {
+		grid-template-areas: 
+			"header header header header"
+			". content navigation ."
+			". extra extra ."
+			"footer footer footer footer";
+		grid-template-rows: auto auto 1fr auto;
+		grid-template-columns: auto calc(1160px - 240px) 240px auto;
+	}
 <?php
 	break;
 case 38:
 ?>
-#container {
-	grid-template-areas: 
-		"header header header header"
-		". navigation content ."
-		". extra extra ."
-		"footer footer footer footer";
-	grid-template-rows: auto auto 1fr auto;
-	grid-template-columns: auto 240px calc(1160px - 240px) auto;
-}
+	#container {
+		grid-template-areas: 
+			"header header header header"
+			". navigation content ."
+			". extra extra ."
+			"footer footer footer footer";
+		grid-template-rows: auto auto 1fr auto;
+		grid-template-columns: auto 240px calc(1160px - 240px) auto;
+	}
 <?php
 	break;
 case 39:
 ?>
-#container {
-	grid-template-areas: 
-		"header header header header"
-		". content content ."
-		". navigation extra ."
-		"footer footer footer footer";
-	grid-template-rows: auto auto auto auto;
-	grid-template-columns: auto calc(1160px / 2) calc(1160px / 2) auto;
-}
+	#container {
+		grid-template-areas: 
+			"header header header header"
+			". content content ."
+			". navigation extra ."
+			"footer footer footer footer";
+		grid-template-rows: auto auto auto auto;
+		grid-template-columns: auto calc(1160px / 2) calc(1160px / 2) auto;
+	}
 <?php
 	break;
 case 40:
 ?>
-#container {
-	grid-template-areas: 
-		"header header header header"
-		". content content ."
-		". extra navigation ."
-		"footer footer footer footer";
-	grid-template-rows: auto auto auto auto;
-	grid-template-columns: auto calc(1160px / 2) calc(1160px / 2) auto;
-}
+	#container {
+		grid-template-areas: 
+			"header header header header"
+			". content content ."
+			". extra navigation ."
+			"footer footer footer footer";
+		grid-template-rows: auto auto auto auto;
+		grid-template-columns: auto calc(1160px / 2) calc(1160px / 2) auto;
+	}
 <?php
 	break;
 }
