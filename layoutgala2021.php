@@ -8,6 +8,11 @@ if (isset($_GET["layout"])) {
 } else {
 	$layout = 1;
 }
+if (isset($_GET["v"]) and $_GET["v"]!='') {
+	$versionmoderne = 'moderne';
+} else {
+	$versionmoderne = false;
+}
 if (($layout < 1) OR ($layout > 40)) $layout = 1;
 ?>
 <title>Layout n°<?=$layout?></title>
@@ -243,9 +248,9 @@ case 7:
 ?>
 	#container {
 		grid-template-areas: 
-			"header header header header header"
+			"<?php echo($versionmoderne ? 'header' : '.'); ?> header header header <?php echo($versionmoderne ? 'header' : '.'); ?>"
 			". navigation content extra ."
-			"footer footer footer footer footer";
+			"<?php echo($versionmoderne ? 'footer' : '.'); ?> footer footer footer <?php echo($versionmoderne ? 'footer' : '.'); ?>";
 		grid-template-rows: auto auto auto;
 		grid-template-columns: auto 240px calc(1160px - 240px - 240px) 240px auto;
 	}
@@ -255,9 +260,9 @@ case 8:
 ?>
 	#container {
 		grid-template-areas: 
-			"header header header header header"
+			"<?php echo($versionmoderne ? 'header' : '.'); ?> header header header <?php echo($versionmoderne ? 'header' : '.'); ?>"
 			". extra content navigation ."
-			"footer footer footer footer footer";
+			"<?php echo($versionmoderne ? 'footer' : '.'); ?> footer footer footer <?php echo($versionmoderne ? 'footer' : '.'); ?>";
 		grid-template-rows: auto auto auto;
 		grid-template-columns: auto 240px calc(1160px - 240px - 240px) 240px auto;
 	}
@@ -267,9 +272,9 @@ case 9:
 ?>
 	#container {
 		grid-template-areas: 
-			"header header header header header"
+			"<?php echo($versionmoderne ? 'header' : '.'); ?> header header header <?php echo($versionmoderne ? 'header' : '.'); ?>"
 			". content navigation extra ."
-			"footer footer footer footer footer";
+			"<?php echo($versionmoderne ? 'footer' : '.'); ?> footer footer footer <?php echo($versionmoderne ? 'footer' : '.'); ?>";
 		grid-template-rows: auto auto auto;
 		grid-template-columns: auto calc(1160px - 240px - 240px) 240px 240px auto;
 	}
@@ -279,9 +284,9 @@ case 10:
 ?>
 	#container {
 		grid-template-areas: 
-			"header header header header header"
+			"<?php echo($versionmoderne ? 'header' : '.'); ?> header header header <?php echo($versionmoderne ? 'header' : '.'); ?>"
 			". content extra navigation ."
-			"footer footer footer footer footer";
+			"<?php echo($versionmoderne ? 'footer' : '.'); ?> footer footer footer <?php echo($versionmoderne ? 'footer' : '.'); ?>";
 		grid-template-rows: auto auto auto;
 		grid-template-columns: auto calc(1160px - 240px - 240px) 240px 240px auto;
 	}
@@ -291,9 +296,9 @@ case 11:
 ?>
 	#container {
 		grid-template-areas: 
-			"header header header header header"
+			"<?php echo($versionmoderne ? 'header' : '.'); ?> header header header <?php echo($versionmoderne ? 'header' : '.'); ?>"
 			". navigation extra content ."
-			"footer footer footer footer footer";
+			"<?php echo($versionmoderne ? 'footer' : '.'); ?> footer footer footer <?php echo($versionmoderne ? 'footer' : '.'); ?>";
 		grid-template-rows: auto auto auto;
 		grid-template-columns: auto 240px 240px calc(1160px - 240px - 240px) auto;
 	}
@@ -303,9 +308,9 @@ case 12:
 ?>
 	#container {
 		grid-template-areas: 
-			"header header header header header"
+			"<?php echo($versionmoderne ? 'header' : '.'); ?> header header header <?php echo($versionmoderne ? 'header' : '.'); ?>"
 			". extra navigation content ."
-			"footer footer footer footer footer";
+			"<?php echo($versionmoderne ? 'footer' : '.'); ?> footer footer footer <?php echo($versionmoderne ? 'footer' : '.'); ?>";
 		grid-template-rows: auto auto auto;
 		grid-template-columns: auto 240px 240px calc(1160px - 240px - 240px) auto;
 	}
@@ -547,10 +552,10 @@ case 33:
 ?>
 	#container {
 		grid-template-areas: 
-			"header header header header"
+			"<?php echo($versionmoderne ? 'header' : '.'); ?> header header <?php echo($versionmoderne ? 'header' : '.'); ?>"
 			". content navigation ."
 			". content extra ."
-			"footer footer footer footer";
+			"<?php echo($versionmoderne ? 'footer' : '.'); ?> footer footer <?php echo($versionmoderne ? 'footer' : '.'); ?>";
 		grid-template-rows: auto auto 1fr auto;
 		grid-template-columns: auto calc(1160px - 240px) 240px auto;
 	}
@@ -560,10 +565,10 @@ case 34:
 ?>
 	#container {
 		grid-template-areas: 
-			"header header header header"
+			"<?php echo($versionmoderne ? 'header' : '.'); ?> header header <?php echo($versionmoderne ? 'header' : '.'); ?>"
 			". navigation content ."
 			". extra content ."
-			"footer footer footer footer";
+			"<?php echo($versionmoderne ? 'footer' : '.'); ?> footer footer <?php echo($versionmoderne ? 'footer' : '.'); ?>";
 		grid-template-rows: auto auto 1fr auto;
 		grid-template-columns: auto 240px calc(1160px - 240px) auto;
 	}
@@ -573,10 +578,10 @@ case 35:
 ?>
 	#container {
 		grid-template-areas: 
-			"header header header header"
+			"<?php echo($versionmoderne ? 'header' : '.'); ?> header header <?php echo($versionmoderne ? 'header' : '.'); ?>"
 			". content navigation ."
 			". extra navigation ."
-			"footer footer footer footer";
+			"<?php echo($versionmoderne ? 'footer' : '.'); ?> footer footer <?php echo($versionmoderne ? 'footer' : '.'); ?>";
 		grid-template-rows: auto auto 1fr auto;
 		grid-template-columns: auto calc(1160px - 240px) 240px auto;
 	}
@@ -586,10 +591,10 @@ case 36:
 ?>
 	#container {
 		grid-template-areas: 
-			"header header header header"
+			"<?php echo($versionmoderne ? 'header' : '.'); ?> header header <?php echo($versionmoderne ? 'header' : '.'); ?>"
 			". navigation content ."
 			". navigation extra ."
-			"footer footer footer footer";
+			"<?php echo($versionmoderne ? 'footer' : '.'); ?> footer footer <?php echo($versionmoderne ? 'footer' : '.'); ?>";
 		grid-template-rows: auto auto 1fr auto;
 		grid-template-columns: auto 240px calc(1160px - 240px) auto;
 	}
@@ -599,10 +604,10 @@ case 37:
 ?>
 	#container {
 		grid-template-areas: 
-			"header header header header"
+			"<?php echo($versionmoderne ? 'header' : '.'); ?> header header <?php echo($versionmoderne ? 'header' : '.'); ?>"
 			". content navigation ."
 			". extra extra ."
-			"footer footer footer footer";
+			"<?php echo($versionmoderne ? 'footer' : '.'); ?> footer footer <?php echo($versionmoderne ? 'footer' : '.'); ?>";
 		grid-template-rows: auto auto 1fr auto;
 		grid-template-columns: auto calc(1160px - 240px) 240px auto;
 	}
@@ -612,10 +617,10 @@ case 38:
 ?>
 	#container {
 		grid-template-areas: 
-			"header header header header"
+			"<?php echo($versionmoderne ? 'header' : '.'); ?> header header <?php echo($versionmoderne ? 'header' : '.'); ?>"
 			". navigation content ."
 			". extra extra ."
-			"footer footer footer footer";
+			"<?php echo($versionmoderne ? 'footer' : '.'); ?> footer footer <?php echo($versionmoderne ? 'footer' : '.'); ?>";
 		grid-template-rows: auto auto 1fr auto;
 		grid-template-columns: auto 240px calc(1160px - 240px) auto;
 	}
@@ -625,10 +630,10 @@ case 39:
 ?>
 	#container {
 		grid-template-areas: 
-			"header header header header"
+			"<?php echo($versionmoderne ? 'header' : '.'); ?> header header <?php echo($versionmoderne ? 'header' : '.'); ?>"
 			". content content ."
 			". navigation extra ."
-			"footer footer footer footer";
+			"<?php echo($versionmoderne ? 'footer' : '.'); ?> footer footer <?php echo($versionmoderne ? 'footer' : '.'); ?>";
 		grid-template-rows: auto auto auto auto;
 		grid-template-columns: auto calc(1160px / 2) calc(1160px / 2) auto;
 	}
@@ -638,10 +643,10 @@ case 40:
 ?>
 	#container {
 		grid-template-areas: 
-			"header header header header"
+			"<?php echo($versionmoderne ? 'header' : '.'); ?> header header <?php echo($versionmoderne ? 'header' : '.'); ?>"
 			". content content ."
 			". extra navigation ."
-			"footer footer footer footer";
+			"<?php echo($versionmoderne ? 'footer' : '.'); ?> footer footer <?php echo($versionmoderne ? 'footer' : '.'); ?>";
 		grid-template-rows: auto auto auto auto;
 		grid-template-columns: auto calc(1160px / 2) calc(1160px / 2) auto;
 	}
@@ -652,7 +657,10 @@ case 40:
 } /*fermeture de la mediaqueries 1160px */
 </style>
 <div id="container">
-<div id="header"><h1><img src='images/layout0<?php echo str_pad($layout, 2, '0', STR_PAD_LEFT) ?>.gif' />Layout n°<?=$layout?></h1><h2>Retour à la <a href="./">page d'accueil</a></h2></div>
+<div id="header"><h1><img src='images/layout0<?php echo str_pad($layout, 2, '0', STR_PAD_LEFT) ?>.gif' />Layout n°<?=$layout?> (<?php echo "<a href='" . $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] 
+     . explode('?', $_SERVER['REQUEST_URI'], 2)[0] . "?layout=$layout'>"; ?>Classique</a> / <?php echo "<a href='" . $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] 
+     . explode('?', $_SERVER['REQUEST_URI'], 2)[0] . "?layout=$layout&v=moderne'>"; ?>Moderne</a>)</h1>
+<h2>Retour à la <a href="./">page d'accueil</a></h2></div>
 <div id="wrapper">
 <div id="content">
 <p><strong>1) Content here.</strong> column long long column very long fill fill fill long text text column text silly very make long very fill silly make make long make text fill very long text column silly silly very column long very column filler fill long make filler long silly very long silly silly silly long filler make column filler make silly long long fill very.</p>
@@ -675,7 +683,7 @@ case 40:
 <?php
 for ($layout = 1; $layout <= 40; $layout++) {
 	echo "<a href='" . $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] 
-     . explode('?', $_SERVER['REQUEST_URI'], 2)[0] . "?layout=$layout'><img src='images/layout0" . str_pad($layout, 2, '0', STR_PAD_LEFT) . ".gif' title='$layout' alt='$layout' /><span class='legend'>$layout</span></a>";
+     . explode('?', $_SERVER['REQUEST_URI'], 2)[0] . "?layout=$layout&v=$versionmoderne'><img src='images/layout0" . str_pad($layout, 2, '0', STR_PAD_LEFT) . ".gif' title='$layout' alt='$layout' /><span class='legend'>$layout</span></a>";
 }
 ?>
 </div>
