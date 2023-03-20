@@ -47,22 +47,43 @@ div#content{background: #fff;}
 
 
 /* Mode mobile ici sans media queries */
-	div#container {
+#container {
 	display: grid;
-	}
+	grid-template-areas: 
+		"header"
+		"content"
+		"navigation"
+		"extra"
+		"footer";
+	grid-template-rows: auto auto auto auto auto;
+	grid-template-columns: 1fr;
+}
 
-	div#header, div#footer{
-	}
 
-	div#navigation{
-	}
+#header {
+	grid-area: header;
+}
+#footer {
+	grid-area: footer;
+}
 
-	div#wrapper{
+#navigation{
+	grid-area: navigation;
+}
+
+#wrapper{
+	grid-area: content;
+}
+
+#content {
 	display: grid;
-	}
+	height: 100%;
+    align-content: flex-start;
+}
 
-	div#extra{
-	}
+#extra{
+	grid-area: extra;
+}
 
 @media screen and (min-width: 768px) {
 /* un switch avec 2 types de cas  pour ipad*/
@@ -99,30 +120,16 @@ switch ($layout){
 	case 38:
 	case 39:
 ?>
-	div#container {
-	grid-template-columns: 50% 50%;
-	}
+#container {
+	grid-template-areas: 
+		"header header"
+		"content content"
+		"navigation extra"
+		"footer footer";
+	grid-template-rows: auto auto auto auto;
+	grid-template-columns: 1fr 1fr;
+}
 
-	div#header, div#footer{
-	grid-column-start: 1;
-	grid-column-end: span 2;
-	}
-
-	div#navigation{
-	grid-column-start: 1;
-	grid-row-start: 3;
-	}
-
-	div#wrapper{
-	grid-column-start: 1;
-	grid-column-end: span 2;
-	grid-row-start: 2;
-	}
-
-	div#extra{
-	grid-column-start: 2;
-	grid-row-start: 3;
-	}
 <?php
 	break;
 	case 2:
@@ -137,30 +144,16 @@ switch ($layout){
 	case 28:
 	case 40:
 ?>
-	div#container {
-	grid-template-columns: 50% 50%;
-	}
+#container {
+	grid-template-areas: 
+		"header header"
+		"content content"
+		"extra navigation"
+		"footer footer";
+	grid-template-rows: auto auto auto auto;
+	grid-template-columns: 1fr 1fr;
+}
 
-	div#header, div#footer{
-	grid-column-start: 1;
-	grid-column-end: span 2;
-	}
-
-	div#navigation{
-	grid-column-start: 2;
-	grid-row-start: 3;
-	}
-
-	div#wrapper{
-	grid-column-start: 1;
-	grid-column-end: span 2;
-	grid-row-start: 2;
-	}
-
-	div#extra{
-	grid-column-start: 1;
-	grid-row-start: 3;
-	}
 <?php
 	break;
 	}
@@ -173,1249 +166,484 @@ switch ($layout){
 <?php
 switch ($layout) {
 case 1: 
-?> 
-   
-	div#container {
+?>
+#container {
+	grid-template-areas: 
+		"header header header"
+		"navigation content extra"
+		"footer footer footer";
+	grid-template-rows: auto auto auto;
 	grid-template-columns: 1fr 2fr 1fr;
-	}
-
-	div#header, div#footer{
-	grid-column-start: 1;
-	grid-column-end: span 3;
-	}
-
-	div#navigation{
-	grid-column-start: 1;
-	grid-row-start: 2;
-	}
-
-	div#wrapper{
-	grid-column-start: 2;
-	grid-column-end: span 1;
-	grid-row-start: 2;
-	}
-
-	div#extra{
-	grid-column-start: 3;
-	grid-row-start: 2;
-	}
-   
-   <?php
+}
+<?php
    break;
 case 2:
-	?>
-	
-		div#container {
+?>
+#container {
+	grid-template-areas: 
+		"header header header"
+		"extra content navigation"
+		"footer footer footer";
+	grid-template-rows: auto auto auto;
 	grid-template-columns: 1fr 2fr 1fr;
-	}
-
-	div#header, div#footer{
-	grid-column-start: 1;
-	grid-column-end: span 3;
-	}
-
-	div#navigation{
-	grid-column-start: 3;
-	grid-row-start: 2;
-	}
-
-	div#wrapper{
-	grid-column-start: 2;
-	grid-column-end: span 1;
-	grid-row-start: 2;
-	}
-
-	div#extra{
-	grid-column-start: 1;
-	grid-row-start: 2;
-	}
-	
-	<?php
+}
+<?php
 	break;
 case 3:
-	?>
-	
-	div#container {
-
+?>
+#container {
+	grid-template-areas: 
+		"header header header"
+		"content navigation extra"
+		"footer footer footer";
+	grid-template-rows: auto auto auto;
 	grid-template-columns: 2fr 1fr 1fr;
-	}
-
-	div#header, div#footer{
-	grid-column-start: 1;
-	grid-column-end: span 3;
-	}
-
-	div#navigation{
-	grid-column-start: 2;
-	grid-row-start: 2;
-	}
-
-	div#wrapper{
-	grid-column-start: 1;
-	grid-column-end: span 1;
-	grid-row-start: 2;
-	}
-
-	div#extra{
-	grid-column-start: 3;
-	grid-row-start: 2;
-	}
-
-	<?php
+}
+<?php
 	break;
 case 4:
-	?>
-	
-	div#container {
+?>
+#container {
+	grid-template-areas: 
+		"header header header"
+		"content extra navigation"
+		"footer footer footer";
+	grid-template-rows: auto auto auto;
 	grid-template-columns: 2fr 1fr 1fr;
-	}
-
-	div#header, div#footer{
-	grid-column-start: 1;
-	grid-column-end: span 3;
-	}
-
-	div#navigation{
-	grid-column-start: 3;
-	grid-row-start: 2;
-	}
-
-	div#wrapper{
-	grid-column-start: 1;
-	grid-column-end: span 1;
-	grid-row-start: 2;
-	}
-
-	div#extra{
-	grid-column-start: 2;
-	grid-row-start: 2;
-	}
-
-	
-	<?php
+}
+<?php
 	break;
 case 5:
-	?>
-	
-	div#container {
+?>
+#container {
+	grid-template-areas: 
+		"header header header"
+		"navigation extra content"
+		"footer footer footer";
+	grid-template-rows: auto auto auto;
 	grid-template-columns: 1fr 1fr 2fr;
-	}
-
-	div#header, div#footer{
-	grid-column-start: 1;
-	grid-column-end: span 3;
-	}
-
-	div#navigation{
-	grid-row-start: 2;
-	}
-
-	div#wrapper{
-	grid-column-start: 3;
-	grid-row-start: 2;
-	}
-
-	div#extra{
-	grid-column-start: 2;
-	grid-row-start: 2;
-	}
-
-	
-	<?php
+}
+<?php
 	break;
 case 6:
-	?>
-	
-	div#container {
+?>
+#container {
+	grid-template-areas: 
+		"header header header"
+		"extra navigation content"
+		"footer footer footer";
+	grid-template-rows: auto auto auto;
 	grid-template-columns: 1fr 1fr 2fr;
-	}
-
-	div#header, div#footer{
-	grid-column-start: 1;
-	grid-column-end: span 3;
-	}
-
-	div#navigation{
-	grid-column-start: 2;
-	grid-row-start: 2;
-	}
-
-	div#wrapper{
-	display:grid;
-	grid-column-start: 3;
-	grid-row-start: 2;
-	}
-
-	div#extra{
-	grid-column-start: 1;
-	grid-row-start: 2;
-	}
-	
-	<?php
+}
+<?php
 	break;
 case 7:
-	?>
-	
-	div#container {
-	grid-template-columns: auto 240px 1fr 240px auto;
-	width: 1160px;
-	margin: 0 auto;
-	}
-
-	div#header, div#footer{
-	grid-column-start: 2;
-	grid-column-end: span 3;
-	}
-
-	div#navigation{
-	grid-column-start: 2;
-	grid-row-start: 2;
-	}
-
-	div#wrapper{
-	grid-column-start: 3;
-	grid-column-end: span 1;
-	grid-row-start: 2;
-	}
-
-	div#extra{
-	grid-column-start: 4;
-	grid-row-start: 2;
-	}
-	
-	<?php
+?>
+#container {
+	grid-template-areas: 
+		"header header header header header"
+		". navigation content extra ."
+		"footer footer footer footer footer";
+	grid-template-rows: auto auto auto;
+	grid-template-columns: auto 240px calc(1160px - 240px - 240px) 240px auto;
+}
+<?php
 	break;
 case 8:
-	?>
-	
-	div#container {
-	grid-template-columns: auto 240px 1fr 240px auto;
-	width: 1160px;
-	margin: 0 auto;
-	}
-	
-	div#header, div#footer{
-	grid-column-start: 2;
-	grid-column-end: span 3;
-	}
-	
-	div#navigation{
-	grid-column-start: 4;
-	grid-row-start: 2;
-	}
-	
-	div#wrapper{
-	grid-column-start: 3;
-	grid-column-end: span 1;
-	grid-row-start: 2;
-	}
-	
-	div#extra{
-	grid-column-start: 2;
-	grid-row-start: 2;
-	}
-	
-	<?php
+?>
+#container {
+	grid-template-areas: 
+		"header header header header header"
+		". extra content navigation ."
+		"footer footer footer footer footer";
+	grid-template-rows: auto auto auto;
+	grid-template-columns: auto 240px calc(1160px - 240px - 240px) 240px auto;
+}
+<?php
 	break;
 case 9:
-	?>
-	
-	div#container {
-	grid-template-columns: auto 1fr 240px 240px auto;
-	width: 1160px;
-	margin: 0 auto;
-	}
-	
-	div#header, div#footer{
-	grid-column-start: 2;
-	grid-column-end: span 3;
-	}
-	
-	div#navigation{
-	grid-column-start: 3;
-	grid-row-start: 2;
-	}
-	
-	div#wrapper{
-	grid-column-start: 2;
-	grid-column-end: span 1;
-	grid-row-start: 2;
-	}
-	
-	div#extra{
-	grid-column-start: 4;
-	grid-row-start: 2;
-	}
-	
-	<?php
+?>
+#container {
+	grid-template-areas: 
+		"header header header header header"
+		". content navigation extra ."
+		"footer footer footer footer footer";
+	grid-template-rows: auto auto auto;
+	grid-template-columns: auto calc(1160px - 240px - 240px) 240px 240px auto;
+}
+<?php
 	break;
 case 10:
-	?>
-	
-	div#container {
-	grid-template-columns: auto 1fr 240px 240px auto;
-	width: 1160px;
-	margin: 0 auto;
-	}
-	
-	div#header, div#footer{
-	grid-column-start: 2;
-	grid-column-end: span 3;
-	}
-	
-	div#navigation{
-	grid-column-start: 4;
-	grid-row-start: 2;
-	}
-	
-	div#wrapper{
-	grid-column-start: 2;
-	grid-column-end: span 1;
-	grid-row-start: 2;
-	}
-	
-	div#extra{
-	grid-column-start: 3;
-	grid-row-start: 2;
-	}
-	
-	<?php
+?>
+#container {
+	grid-template-areas: 
+		"header header header header header"
+		". content extra navigation ."
+		"footer footer footer footer footer";
+	grid-template-rows: auto auto auto;
+	grid-template-columns: auto calc(1160px - 240px - 240px) 240px 240px auto;
+}
+<?php
 	break;
 case 11:
-	?>
-	
-	div#container {
-	grid-template-columns: auto 240px 240px 1fr auto;
-	width: 1160px;
-	margin: 0 auto;
-	}
-	
-	div#header, div#footer{
-	grid-column-start: 2;
-	grid-column-end: span 3;
-	}
-	
-	div#navigation{
-	grid-column-start: 2;
-	grid-row-start: 2;
-	}
-	
-	div#wrapper{
-	grid-column-start: 4;
-	grid-column-end: span 1;
-	grid-row-start: 2;
-	}
-	
-	div#extra{
-	grid-column-start: 3;
-	grid-row-start: 2;
-	}
-	
-	<?php
+?>
+#container {
+	grid-template-areas: 
+		"header header header header header"
+		". navigation extra content ."
+		"footer footer footer footer footer";
+	grid-template-rows: auto auto auto;
+	grid-template-columns: auto 240px 240px calc(1160px - 240px - 240px) auto;
+}
+<?php
 	break;
 case 12:
-	?>
-	
-	div#container {
-	grid-template-columns: auto 240px 240px 1fr auto;
-	width: 1160px;
-	margin: 0 auto;
-	}
-	
-	div#header, div#footer{
-	grid-column-start: 2;
-	grid-column-end: span 3;
-	}
-	
-	div#navigation{
-	grid-column-start: 3;
-	grid-row-start: 2;
-	}
-	
-	div#wrapper{
-	grid-column-start: 4;
-	grid-column-end: span 1;
-	grid-row-start: 2;
-	}
-	
-	div#extra{
-	grid-column-start: 2;
-	grid-row-start: 2;
-	}
-	
-	<?php
+?>
+#container {
+	grid-template-areas: 
+		"header header header header header"
+		". extra navigation content ."
+		"footer footer footer footer footer";
+	grid-template-rows: auto auto auto;
+	grid-template-columns: auto 240px 240px calc(1160px - 240px - 240px) auto;
+}
+<?php
 	break;
 case 13:
-	?>
-	
-	div#container {
+?>
+#container {
+	grid-template-areas: 
+		"header header header"
+		"navigation content extra"
+		"footer footer footer";
+	grid-template-rows: auto auto auto;
 	grid-template-columns: 240px 1fr 240px;
-	}
-	
-	div#header, div#footer{
-	grid-column-start: 1;
-	grid-column-end: span 3;
-	}
-	
-	div#navigation{
-	grid-column-start: 1;
-	grid-row-start: 2;
-	}
-	
-	div#wrapper{
-	grid-column-start: 2;
-	grid-column-end: span 1;
-	grid-row-start: 2;
-	}
-	
-	div#extra{
-	grid-column-start: 3;
-	grid-row-start: 2;
-	}
-	
-	<?php
+}
+<?php
 	break;
 case 14:
-	?>
-	
-	div#container {
+?>
+#container {
+	grid-template-areas: 
+		"header header header"
+		"extra content navigation"
+		"footer footer footer";
+	grid-template-rows: auto auto auto;
 	grid-template-columns: 240px 1fr 240px;
-	}
-	
-	div#header, div#footer{
-	grid-column-start: 1;
-	grid-column-end: span 3;
-	}
-	
-	div#navigation{
-	grid-column-start: 3;
-	grid-row-start: 2;
-	}
-	
-	div#wrapper{
-	grid-column-start: 2;
-	grid-column-end: span 1;
-	grid-row-start: 2;
-	}
-	
-	div#extra{
-	grid-column-start: 1;
-	grid-row-start: 2;
-	}
-	
-	<?php
+}
+<?php
 	break;
 case 15:
-	?>
-	
-	div#container {
+?>
+#container {
+	grid-template-areas: 
+		"header header header"
+		"content navigation extra"
+		"footer footer footer";
+	grid-template-rows: auto auto auto;
 	grid-template-columns: 1fr 240px 240px;
-	}
-	
-	div#header, div#footer{
-	grid-column-start: 1;
-	grid-column-end: span 3;
-	}
-	
-	div#navigation{
-	grid-column-start: 2;
-	grid-row-start: 2;
-	}
-	
-	div#wrapper{
-	grid-column-start: 1;
-	grid-column-end: span 1;
-	grid-row-start: 2;
-	}
-	
-	div#extra{
-	grid-column-start: 3;
-	grid-row-start: 2;
-	}
-	
-	<?php
+}
+<?php
 	break;
 case 16:
-	?>
-	
-	div#container {
+?>
+#container {
+	grid-template-areas: 
+		"header header header"
+		"content extra navigation"
+		"footer footer footer";
+	grid-template-rows: auto auto auto;
 	grid-template-columns: 1fr 240px 240px;
-	}
-	
-	div#header, div#footer{
-	grid-column-start: 1;
-	grid-column-end: span 3;
-	}
-	
-	div#navigation{
-	grid-column-start: 3;
-	grid-row-start: 2;
-	}
-	
-	div#wrapper{
-	grid-column-start: 1;
-	grid-column-end: span 1;
-	grid-row-start: 2;
-	}
-	
-	div#extra{
-	grid-column-start: 2;
-	grid-row-start: 2;
-	}
-	
-	<?php
+}
+<?php
 	break;
 case 17:
-	?>
-	
-	div#container {
+?>
+#container {
+	grid-template-areas: 
+		"header header header"
+		"navigation extra content"
+		"footer footer footer";
+	grid-template-rows: auto auto auto;
 	grid-template-columns: 240px 240px 1fr;
-	}
-	
-	div#header, div#footer{
-	grid-column-start: 1;
-	grid-column-end: span 3;
-	}
-	
-	div#navigation{
-	grid-column-start: 2;
-	grid-row-start: 2;
-	}
-	
-	div#wrapper{
-	grid-column-start: 3;
-	grid-row-start: 2;
-	}
-	
-	div#extra{
-	grid-column-start: 1;
-	grid-row-start: 2;
-	}
-	
-	<?php
+}
+<?php
 	break;
 case 18:
-	?>
-	
-	div#container {
+?>
+#container {
+	grid-template-areas: 
+		"header header header"
+		"extra navigation content"
+		"footer footer footer";
+	grid-template-rows: auto auto auto;
 	grid-template-columns: 240px 240px 1fr;
-	}
-	
-	div#header, div#footer{
-	grid-column-start: 1;
-	grid-column-end: span 3;
-	}
-	
-	div#navigation{
-	grid-column-start: 1;
-	grid-row-start: 2;
-	}
-	
-	div#wrapper{
-	grid-column-start: 3;
-	grid-row-start: 2;
-	}
-	
-	div#extra{
-	grid-column-start: 2;
-	grid-row-start: 2;
-	}
-	
-	<?php
+}
+<?php
 	break;
 case 19:
-	?>
-	
-	div#container {
+?>
+#container {
+	grid-template-areas: 
+		"header header header"
+		"navigation content extra"
+		"footer footer footer";
+	grid-template-rows: auto auto auto;
 	grid-template-columns: 240px 2fr 1fr;
-	}
-	
-	div#header, div#footer{
-	grid-column-start: 1;
-	grid-column-end: span 3;
-	}
-	
-	div#navigation{
-	grid-column-start: 1;
-	grid-row-start: 2;
-	}
-	
-	div#wrapper{
-	grid-column-start: 2;
-	grid-column-end: span 1;
-	grid-row-start: 2;
-	}
-	
-	div#extra{
-	grid-column-start: 3;
-	grid-row-start: 2;
-	}
-	
-	<?php
+}
+<?php
 	break;
 case 20:
-	?>
-	
-	div#container {
+?>
+#container {
+	grid-template-areas: 
+		"header header header"
+		"navigation content extra"
+		"footer footer footer";
+	grid-template-rows: auto auto auto;
 	grid-template-columns: 1fr 2fr 240px;
-	}
-	
-	div#header, div#footer{
-	grid-column-start: 1;
-	grid-column-end: span 3;
-	}
-	
-	div#navigation{
-	grid-column-start: 1;
-	grid-row-start: 2;
-	}
-	
-	div#wrapper{
-	grid-column-start: 2;
-	grid-column-end: span 1;
-	grid-row-start: 2;
-	}
-	
-	div#extra{
-	grid-column-start: 3;
-	grid-row-start: 2;
-	}
-	
-	<?php
+}
+<?php
 	break;
 case 21:
-	?>
-	
-	div#container {
+?>
+#container {
+	grid-template-areas: 
+		"header header header"
+		"content navigation extra"
+		"footer footer footer";
+	grid-template-rows: auto auto auto;
 	grid-template-columns: 2fr 240px 1fr;
-	}
-	
-	div#header, div#footer{
-	grid-column-start: 1;
-	grid-column-end: span 3;
-	}
-	
-	div#navigation{
-	grid-column-start: 2;
-	grid-row-start: 2;
-	}
-	
-	div#wrapper{
-	grid-column-start: 1;
-	grid-column-end: span 1;
-	grid-row-start: 2;
-	}
-	
-	div#extra{
-	grid-column-start: 3;
-	grid-row-start: 2;
-	}
-	
-	<?php
+}
+<?php
 	break;
 case 22:
-	?>
-	
-	div#container {
+?>
+#container {
+	grid-template-areas: 
+		"header header header"
+		"content navigation extra"
+		"footer footer footer";
+	grid-template-rows: auto auto auto;
 	grid-template-columns: 2fr 1fr 240px;
-	}
-	
-	div#header, div#footer{
-	grid-column-start: 1;
-	grid-column-end: span 3;
-	}
-	
-	div#navigation{
-	grid-column-start: 2;
-	grid-row-start: 2;
-	}
-	
-	div#wrapper{
-	grid-column-start: 1;
-	grid-column-end: span 1;
-	grid-row-start: 2;
-	}
-	
-	div#extra{
-	grid-column-start: 3;
-	grid-row-start: 2;
-	}
-	
-	<?php
+}
+<?php
 	break;
 case 23:
-	?>
-	
-	div#container {
-	grid-template-columns: 1fr 240px;
+?>
+#container {
+	grid-template-areas: 
+		"header header"
+		"content navigation"
+		"content extra"
+		"footer footer";
 	grid-template-rows: auto auto 1fr auto;
-	}
-
-	div#header, div#footer{
-	grid-column-start: 1;
-	grid-column-end: span 2;
-	}
-
-	div#navigation{
-	grid-column-start: 2;
-	grid-row-start: 2;
-	}
-
-	div#wrapper{
-	grid-column-start: 1;
-	grid-column-end: span 1;
-	grid-row-start: 2;
-	grid-row-end: span 2;
-	}
-
-	div#extra{
-	grid-column-start: 2;
-	grid-row-start: 3;
-	}
-	
-	<?php
+	grid-template-columns: 1fr 240px;
+}
+<?php
 	break;
 case 24:
-	?>
-	
-	div#container {
-	grid-template-columns: 240px 1fr;
+?>
+#container {
+	grid-template-areas: 
+		"header header"
+		"navigation content"
+		"extra content"
+		"footer footer";
 	grid-template-rows: auto auto 1fr auto;
-	}
-
-	div#header, div#footer{
-	grid-column-start: 1;
-	grid-column-end: span 2;
-	}
-
-	div#navigation{
-	grid-column-start: 1;
-	grid-row-start: 2;
-	}
-
-	div#wrapper{
-	grid-column-start: 2;
-	grid-row-start: 2;
-	grid-row-end: span 2;
-	}
-
-	div#extra{
-	grid-column-start: 1;
-	grid-row-start: 3;
-	}
-	
-	<?php
+	grid-template-columns: 240px 1fr;
+}
+<?php
 	break;
 case 25:
-	?>
-	
-	div#container {
-	grid-template-columns: 2fr 1fr;
+?>
+#container {
+	grid-template-areas: 
+		"header header"
+		"content navigation"
+		"content extra"
+		"footer footer";
 	grid-template-rows: auto auto 1fr auto;
-	}
-
-	div#header, div#footer{
-	grid-column-start: 1;
-	grid-column-end: span 2;
-	}
-
-	div#navigation{
-	grid-column-start: 2;
-	grid-row-start: 2;
-	grid-auto-rows: auto;
-	}
-
-	div#wrapper{
-	grid-column-start: 1;
-	grid-column-end: span 1;
-	grid-row-start: 2;
-	grid-row-end: span 2;
-	}
-
-	div#extra{
-	grid-column-start: 2;
-	grid-row-start: 3;
-	}
-	
-	<?php
+	grid-template-columns: 2fr 1fr;
+}
+<?php
 	break;
 case 26:
-	?>
-	
-	div#container {
-	grid-template-columns: 1fr 2fr;
+?>
+#container {
+	grid-template-areas: 
+		"header header"
+		"navigation content"
+		"extra content"
+		"footer footer";
 	grid-template-rows: auto auto 1fr auto;
-	}
-
-	div#header, div#footer{
-	grid-column-start: 1;
-	grid-column-end: span 2;
-	}
-
-	div#navigation{
-	grid-column-start: 1;
-	grid-row-start: 2;
-	}
-
-	div#wrapper{
-	grid-column-start: 2;
-	grid-row-start: 2;
-	grid-row-end: span 2;
-	}
-
-	div#extra{
-	grid-column-start: 1;
-	grid-row-start: 3;
-	}
-	
-	<?php
+	grid-template-columns: 1fr 2fr;
+}
+<?php
 	break;
 case 27:
-	?>
-	
-	div#container {
-	grid-template-columns: 1fr 1fr;
-	}
-
-	div#header, div#footer{
-	grid-column-start: 1;
-	grid-column-end: span 2;
-	}
-
-	div#navigation{
-	grid-column-start: 1;
-	grid-row-start: 3;
-	}
-
-	div#wrapper{
-	grid-column-start: 1;
-	grid-column-end: span 2;
-	grid-row-start: 2;
-	}
-
-	div#extra{
-	grid-column-start: 2;
-	grid-row-start: 3;
-	}
-	
-	<?php
+?>
+<?php
 	break;
 case 28:
-	?>
-	
-	div#container {
-	grid-template-columns: 1fr 1fr;
-	}
-
-	div#header, div#footer{
-	grid-column-start: 1;
-	grid-column-end: span 2;
-	}
-
-	div#navigation{
-	grid-column-start: 2;
-	grid-row-start: 3;
-	}
-
-	div#wrapper{
-	grid-column-start: 1;
-	grid-column-end: span 2;
-	grid-row-start: 2;
-	}
-
-	div#extra{
-	grid-column-start: 1;
-	grid-row-start: 3;
-	}
-	
-	<?php
+?>
+<?php
 	break;
 case 29:
-	?>
-	
-	div#container {
+?>
+#container {
+	grid-template-areas: 
+		"header header"
+		"navigation content"
+		"extra extra"
+		"footer footer";
+	grid-template-rows: auto auto auto auto;
 	grid-template-columns: 1fr 2fr;
-	}
-
-	div#header, div#footer{
-	grid-column-start: 1;
-	grid-column-end: span 2;
-	}
-
-	div#navigation{
-	grid-column-start: 1;
-	grid-row-start: 2;
-	}
-
-	div#wrapper{
-	grid-column-start: 2;
-	grid-row-start: 2;
-	}
-
-	div#extra{
-	grid-column-start: 1;
-	grid-column-end: span 2;
-	grid-row-start: 3;
-	}
-	
-	<?php
+}
+<?php
 	break;
 case 30:
-	?>
-	
-	
-	div#container {
+?>
+#container {
+	grid-template-areas: 
+		"header header"
+		"content navigation"
+		"extra extra"
+		"footer footer";
+	grid-template-rows: auto auto auto auto;
 	grid-template-columns: 2fr 1fr;
-	}
-
-	div#header, div#footer{
-	grid-column-start: 1;
-	grid-column-end: span 2;
-	}
-
-	div#navigation{
-	grid-column-start: 2;
-	grid-row-start: 2;
-	}
-
-	div#wrapper{
-	grid-column-start: 1;
-	grid-column-end: span 1;
-	grid-row-start: 2;
-	}
-
-	div#extra{
-	grid-column-start: 1;
-	grid-column-end: span 2;
-	grid-row-start: 3;
-	}
-	
-	<?php
+}
+<?php
 	break;
 case 31:
-	?>
-	
-	div#container {
+?>
+#container {
+	grid-template-areas: 
+		"header header"
+		"navigation content"
+		"extra extra"
+		"footer footer";
+	grid-template-rows: auto auto auto auto;
 	grid-template-columns: 240px 1fr;
-	}
-
-	div#header, div#footer{
-	grid-column-start: 1;
-	grid-column-end: span 2;
-	}
-
-	div#navigation{
-	grid-column-start: 1;
-	grid-row-start: 2;
-	}
-
-	div#wrapper{
-	grid-column-start: 2;
-	grid-row-start: 2;
-	}
-
-	div#extra{
-	grid-column-start: 1;
-	grid-column-end: span 2;
-	grid-row-start: 3;
-	}
-	
-	<?php
+}
+<?php
 	break;
 case 32:
-	?>
-	
-	div#container {
+?>
+#container {
+	grid-template-areas: 
+		"header header"
+		"content navigation"
+		"extra extra"
+		"footer footer";
+	grid-template-rows: auto auto auto auto;
 	grid-template-columns: 1fr 240px;
-	}
-
-	div#header, div#footer{
-	grid-column-start: 1;
-	grid-column-end: span 2;
-	}
-
-	div#navigation{
-	grid-column-start: 2;
-	grid-row-start: 2;
-	}
-
-	div#wrapper{
-	grid-column-start: 1;
-	grid-column-end: span 1;
-	grid-row-start: 2;
-	}
-
-	div#extra{
-	grid-column-start: 1;
-	grid-column-end: span 2;
-	grid-row-start: 3;
-	}
-	
-	<?php
+}
+<?php
 	break;
 case 33:
-	?>
-	
-	div#container {
-	grid-template-columns: auto 1fr 240px auto;
-	max-width: 1160px;
-	margin: 0 auto;
+?>
+#container {
+	grid-template-areas: 
+		"header header header header"
+		". content navigation ."
+		". content extra ."
+		"footer footer footer footer";
 	grid-template-rows: auto auto 1fr auto;
-	}
-
-	div#header, div#footer{
-	grid-column-start: 2;
-	grid-column-end: span 2;
-	}
-
-	div#navigation{
-	grid-column-start: 3;
-	grid-row-start: 2;
-	}
-
-	div#wrapper{
-	grid-column-start: 2;
-	grid-column-end: span 1;
-	grid-row-start: 2;
-	grid-row-end: span 2;
-	}
-
-	div#extra{
-	grid-column-start: 3;
-	grid-row-start: 3;
-	}
-	
-	<?php
+	grid-template-columns: auto calc(1160px - 240px) 240px auto;
+}
+<?php
 	break;
 case 34:
-	?>
-	
-	div#container {
-	grid-template-columns: auto 240px 1fr auto;
-	max-width: 1160px;
-	margin: 0 auto;
+?>
+#container {
+	grid-template-areas: 
+		"header header header header"
+		". navigation content ."
+		". extra content ."
+		"footer footer footer footer";
 	grid-template-rows: auto auto 1fr auto;
-	}
-	
-	div#header, div#footer{
-	grid-column-start: 2;
-	grid-column-end: span 2;
-	}
-	
-	div#navigation{
-	grid-column-start: 2;
-	grid-row-start: 2;
-	}
-	
-	div#wrapper{
-	grid-column-start: 3;
-	grid-column-end: span 1;
-	grid-row-start: 2;
-	grid-row-end: span 2;
-	}
-	
-	div#extra{
-	grid-column-start: 2;
-	grid-row-start: 3;
-	}
-	
-	<?php
+	grid-template-columns: auto 240px calc(1160px - 240px) auto;
+}
+<?php
 	break;
 case 35:
-	?>
-	
-	div#container {
-	grid-template-columns: auto 1fr 240px auto;
-	max-width: 1160px;
-	margin: 0 auto;
-	}
-	
-	div#header, div#footer{
-	grid-column-start: 2;
-	grid-column-end: span 2;
-	}
-	
-	div#navigation{
-	grid-column-start: 3;
-	grid-row-start: 2;
-	grid-row-end: span 2;
-	}
-	
-	div#wrapper{
-	grid-column-start: 2;
-	grid-column-end: span 1;
-	grid-row-start: 2;
-	}
-	
-	div#extra{
-	grid-column-start: 2;
-	grid-row-start: 3;
-	}
-	
-	<?php
+?>
+#container {
+	grid-template-areas: 
+		"header header header header"
+		". content navigation ."
+		". extra navigation ."
+		"footer footer footer footer";
+	grid-template-rows: auto auto 1fr auto;
+	grid-template-columns: auto calc(1160px - 240px) 240px auto;
+}
+<?php
 	break;
 case 36:
-	?>
-	
-	div#container {
-	grid-template-columns: auto 240px 1fr auto;
-	max-width: 1160px;
-	margin: 0 auto;
-	}
-	
-	div#header, div#footer{
-	grid-column-start: 2;
-	grid-column-end: span 2;
-	}
-	
-	div#navigation{
-	grid-column-start: 2;
-	grid-row-start: 2;
-	grid-row-end: span 2;
-	}
-	
-	div#wrapper{
-	grid-column-start: 3;
-	grid-column-end: span 1;
-	grid-row-start: 2;
-	}
-	
-	div#extra{
-	grid-column-start: 3;
-	grid-row-start: 3;
-	}
-	
-	<?php
+?>
+#container {
+	grid-template-areas: 
+		"header header header header"
+		". navigation content ."
+		". navigation extra ."
+		"footer footer footer footer";
+	grid-template-rows: auto auto 1fr auto;
+	grid-template-columns: auto 240px calc(1160px - 240px) auto;
+}
+<?php
 	break;
 case 37:
-	?>
-	
-	div#container {
-	grid-template-columns: auto 1fr 240px auto;
-	max-width: 1160px;
-	margin: 0 auto;
-	}
-	
-	div#header, div#footer{
-	grid-column-start: 2;
-	grid-column-end: span 2;
-	}
-	
-	div#navigation{
-	grid-column-start: 3;
-	grid-row-start: 2;
-	}
-	
-	div#wrapper{
-	grid-column-start: 2;
-	grid-column-end: span 1;
-	grid-row-start: 2;
-	}
-	
-	div#extra{
-	grid-column-start: 2;
-	grid-column-end: span 2;
-	grid-row-start: 3;
-	}
-	
-	<?php
+?>
+#container {
+	grid-template-areas: 
+		"header header header header"
+		". content navigation ."
+		". extra extra ."
+		"footer footer footer footer";
+	grid-template-rows: auto auto 1fr auto;
+	grid-template-columns: auto calc(1160px - 240px) 240px auto;
+}
+<?php
 	break;
 case 38:
-	?>
-	
-	div#container {
-	grid-template-columns: auto 240px 1fr auto;
-	max-width: 1160px;
-	margin: 0 auto;
-	}
-	
-	div#header, div#footer{
-	grid-column-start: 2;
-	grid-column-end: span 2;
-	}
-	
-	div#navigation{
-	grid-column-start: 2;
-	grid-row-start: 2;
-	}
-	
-	div#wrapper{
-	grid-column-start: 3;
-	grid-column-end: span 1;
-	grid-row-start: 2;
-	}
-	
-	div#extra{
-	grid-column-start: 2;
-	grid-column-end: span 2;
-	grid-row-start: 3;
-	}
-	
-	<?php
+?>
+#container {
+	grid-template-areas: 
+		"header header header header"
+		". navigation content ."
+		". extra extra ."
+		"footer footer footer footer";
+	grid-template-rows: auto auto 1fr auto;
+	grid-template-columns: auto 240px calc(1160px - 240px) auto;
+}
+<?php
 	break;
 case 39:
-	?>
-	
-	div#container {
-	grid-template-columns: auto 1fr 1fr auto;
-	max-width: 1160px;
-	margin: 0 auto;
-	}
-	
-	div#header, div#footer{
-	grid-column-start: 2;
-	grid-column-end: span 2;
-	}
-	
-	div#navigation{
-	grid-column-start: 2;
-	grid-row-start: 3;
-	}
-	
-	div#wrapper{
-	grid-column-start: 2;
-	grid-column-end: span 2;
-	grid-row-start: 2;
-	}
-	
-	div#extra{
-	grid-column-start: 3;
-	grid-row-start: 3;
-	}
-	
-	<?php
+?>
+#container {
+	grid-template-areas: 
+		"header header header header"
+		". content content ."
+		". navigation extra ."
+		"footer footer footer footer";
+	grid-template-rows: auto auto auto auto;
+	grid-template-columns: auto calc(1160px / 2) calc(1160px / 2) auto;
+}
+<?php
 	break;
 case 40:
-	?>
-	
-	div#container {
-	grid-template-columns: auto 1fr 1fr auto;
-	max-width: 1160px;
-	margin: 0 auto;
-	}
-	
-	div#header, div#footer{
-	grid-column-start: 2;
-	grid-column-end: span 2;
-	}
-	
-	div#navigation{
-	grid-column-start: 3;
-	grid-row-start: 3;
-	}
-	
-	div#wrapper{
-	grid-column-start: 2;
-	grid-column-end: span 2;
-	grid-row-start: 2;
-	}
-	
-	div#extra{
-	grid-column-start: 2;
-	grid-row-start: 3;
-	}
-	
-	<?php
+?>
+#container {
+	grid-template-areas: 
+		"header header header header"
+		". content content ."
+		". extra navigation ."
+		"footer footer footer footer";
+	grid-template-rows: auto auto auto auto;
+	grid-template-columns: auto calc(1160px / 2) calc(1160px / 2) auto;
+}
+<?php
 	break;
 }
 ?>
