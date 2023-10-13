@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <meta charset="UTF-8">
 <html>
-<head>   
+<head>
 <?php
 if (isset($_GET["layout"])) {
 	$layout = intval($_GET["layout"]);
@@ -16,8 +16,8 @@ if (isset($_GET["v"]) and $_GET["v"]!='') {
 if (($layout < 1) OR ($layout > 40)) $layout = 1;
 ?>
 <title>Layout n°<?=$layout?></title>
-<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
-<meta name="generator" content="HAPedit 3.1">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 <script type="text/javascript" src="js/filler.js"></script>
@@ -56,14 +56,6 @@ div#content{background: #fff;}
 @media screen and (min-width: 768px) {
 	#container {
 		display: grid;
-		grid-template-areas: 
-			"header"
-			"content"
-			"navigation"
-			"extra"
-			"footer";
-		grid-template-rows: auto auto auto auto auto;
-		grid-template-columns: 1fr;
 	}
 
 
@@ -94,7 +86,7 @@ div#content{background: #fff;}
 
 
 /* un switch avec 2 types de cas  pour ipad*/
-<?php 
+<?php
 switch ($layout){
 	case 1:
 	case 3:
@@ -128,7 +120,7 @@ switch ($layout){
 	case 39:
 ?>
 	#container {
-		grid-template-areas: 
+		grid-template-areas:
 			"header header"
 			"content content"
 			"navigation extra"
@@ -152,7 +144,7 @@ switch ($layout){
 	case 40:
 ?>
 	#container {
-		grid-template-areas: 
+		grid-template-areas:
 			"header header"
 			"content content"
 			"extra navigation"
@@ -172,10 +164,10 @@ switch ($layout){
 /* ce switch pour desktop */
 <?php
 switch ($layout) {
-case 1: 
+case 1:
 ?>
 	#container {
-		grid-template-areas: 
+		grid-template-areas:
 			"header header header"
 			"navigation content extra"
 			"footer footer footer";
@@ -187,7 +179,7 @@ case 1:
 case 2:
 ?>
 	#container {
-		grid-template-areas: 
+		grid-template-areas:
 			"header header header"
 			"extra content navigation"
 			"footer footer footer";
@@ -199,7 +191,7 @@ case 2:
 case 3:
 ?>
 	#container {
-		grid-template-areas: 
+		grid-template-areas:
 			"header header header"
 			"content navigation extra"
 			"footer footer footer";
@@ -211,7 +203,7 @@ case 3:
 case 4:
 ?>
 	#container {
-		grid-template-areas: 
+		grid-template-areas:
 			"header header header"
 			"content extra navigation"
 			"footer footer footer";
@@ -223,7 +215,7 @@ case 4:
 case 5:
 ?>
 	#container {
-		grid-template-areas: 
+		grid-template-areas:
 			"header header header"
 			"navigation extra content"
 			"footer footer footer";
@@ -235,7 +227,7 @@ case 5:
 case 6:
 ?>
 	#container {
-		grid-template-areas: 
+		grid-template-areas:
 			"header header header"
 			"extra navigation content"
 			"footer footer footer";
@@ -247,7 +239,7 @@ case 6:
 case 7:
 ?>
 	#container {
-		grid-template-areas: 
+		grid-template-areas:
 			"<?php echo($versionmoderne ? 'header' : '.'); ?> header header header <?php echo($versionmoderne ? 'header' : '.'); ?>"
 			". navigation content extra ."
 			"<?php echo($versionmoderne ? 'footer' : '.'); ?> footer footer footer <?php echo($versionmoderne ? 'footer' : '.'); ?>";
@@ -259,7 +251,7 @@ case 7:
 case 8:
 ?>
 	#container {
-		grid-template-areas: 
+		grid-template-areas:
 			"<?php echo($versionmoderne ? 'header' : '.'); ?> header header header <?php echo($versionmoderne ? 'header' : '.'); ?>"
 			". extra content navigation ."
 			"<?php echo($versionmoderne ? 'footer' : '.'); ?> footer footer footer <?php echo($versionmoderne ? 'footer' : '.'); ?>";
@@ -271,7 +263,7 @@ case 8:
 case 9:
 ?>
 	#container {
-		grid-template-areas: 
+		grid-template-areas:
 			"<?php echo($versionmoderne ? 'header' : '.'); ?> header header header <?php echo($versionmoderne ? 'header' : '.'); ?>"
 			". content navigation extra ."
 			"<?php echo($versionmoderne ? 'footer' : '.'); ?> footer footer footer <?php echo($versionmoderne ? 'footer' : '.'); ?>";
@@ -283,7 +275,7 @@ case 9:
 case 10:
 ?>
 	#container {
-		grid-template-areas: 
+		grid-template-areas:
 			"<?php echo($versionmoderne ? 'header' : '.'); ?> header header header <?php echo($versionmoderne ? 'header' : '.'); ?>"
 			". content extra navigation ."
 			"<?php echo($versionmoderne ? 'footer' : '.'); ?> footer footer footer <?php echo($versionmoderne ? 'footer' : '.'); ?>";
@@ -295,7 +287,7 @@ case 10:
 case 11:
 ?>
 	#container {
-		grid-template-areas: 
+		grid-template-areas:
 			"<?php echo($versionmoderne ? 'header' : '.'); ?> header header header <?php echo($versionmoderne ? 'header' : '.'); ?>"
 			". navigation extra content ."
 			"<?php echo($versionmoderne ? 'footer' : '.'); ?> footer footer footer <?php echo($versionmoderne ? 'footer' : '.'); ?>";
@@ -307,7 +299,7 @@ case 11:
 case 12:
 ?>
 	#container {
-		grid-template-areas: 
+		grid-template-areas:
 			"<?php echo($versionmoderne ? 'header' : '.'); ?> header header header <?php echo($versionmoderne ? 'header' : '.'); ?>"
 			". extra navigation content ."
 			"<?php echo($versionmoderne ? 'footer' : '.'); ?> footer footer footer <?php echo($versionmoderne ? 'footer' : '.'); ?>";
@@ -319,7 +311,7 @@ case 12:
 case 13:
 ?>
 	#container {
-		grid-template-areas: 
+		grid-template-areas:
 			"header header header"
 			"navigation content extra"
 			"footer footer footer";
@@ -331,7 +323,7 @@ case 13:
 case 14:
 ?>
 	#container {
-		grid-template-areas: 
+		grid-template-areas:
 			"header header header"
 			"extra content navigation"
 			"footer footer footer";
@@ -343,7 +335,7 @@ case 14:
 case 15:
 ?>
 	#container {
-		grid-template-areas: 
+		grid-template-areas:
 			"header header header"
 			"content navigation extra"
 			"footer footer footer";
@@ -355,7 +347,7 @@ case 15:
 case 16:
 ?>
 	#container {
-		grid-template-areas: 
+		grid-template-areas:
 			"header header header"
 			"content extra navigation"
 			"footer footer footer";
@@ -367,7 +359,7 @@ case 16:
 case 17:
 ?>
 	#container {
-		grid-template-areas: 
+		grid-template-areas:
 			"header header header"
 			"extra navigation content"
 			"footer footer footer";
@@ -379,7 +371,7 @@ case 17:
 case 18:
 ?>
 	#container {
-		grid-template-areas: 
+		grid-template-areas:
 			"header header header"
 			"navigation extra content"
 			"footer footer footer";
@@ -391,7 +383,7 @@ case 18:
 case 19:
 ?>
 	#container {
-		grid-template-areas: 
+		grid-template-areas:
 			"header header header"
 			"navigation content extra"
 			"footer footer footer";
@@ -403,7 +395,7 @@ case 19:
 case 20:
 ?>
 	#container {
-		grid-template-areas: 
+		grid-template-areas:
 			"header header header"
 			"navigation content extra"
 			"footer footer footer";
@@ -415,7 +407,7 @@ case 20:
 case 21:
 ?>
 	#container {
-		grid-template-areas: 
+		grid-template-areas:
 			"header header header"
 			"content navigation extra"
 			"footer footer footer";
@@ -427,7 +419,7 @@ case 21:
 case 22:
 ?>
 	#container {
-		grid-template-areas: 
+		grid-template-areas:
 			"header header header"
 			"content navigation extra"
 			"footer footer footer";
@@ -439,7 +431,7 @@ case 22:
 case 23:
 ?>
 	#container {
-		grid-template-areas: 
+		grid-template-areas:
 			"header header"
 			"content navigation"
 			"content extra"
@@ -452,7 +444,7 @@ case 23:
 case 24:
 ?>
 	#container {
-		grid-template-areas: 
+		grid-template-areas:
 			"header header"
 			"navigation content"
 			"extra content"
@@ -465,7 +457,7 @@ case 24:
 case 25:
 ?>
 	#container {
-		grid-template-areas: 
+		grid-template-areas:
 			"header header"
 			"content navigation"
 			"content extra"
@@ -478,7 +470,7 @@ case 25:
 case 26:
 ?>
 	#container {
-		grid-template-areas: 
+		grid-template-areas:
 			"header header"
 			"navigation content"
 			"extra content"
@@ -499,7 +491,7 @@ case 28:
 case 29:
 ?>
 	#container {
-		grid-template-areas: 
+		grid-template-areas:
 			"header header"
 			"navigation content"
 			"extra extra"
@@ -512,7 +504,7 @@ case 29:
 case 30:
 ?>
 	#container {
-		grid-template-areas: 
+		grid-template-areas:
 			"header header"
 			"content navigation"
 			"extra extra"
@@ -525,7 +517,7 @@ case 30:
 case 31:
 ?>
 	#container {
-		grid-template-areas: 
+		grid-template-areas:
 			"header header"
 			"navigation content"
 			"extra extra"
@@ -538,7 +530,7 @@ case 31:
 case 32:
 ?>
 	#container {
-		grid-template-areas: 
+		grid-template-areas:
 			"header header"
 			"content navigation"
 			"extra extra"
@@ -551,7 +543,7 @@ case 32:
 case 33:
 ?>
 	#container {
-		grid-template-areas: 
+		grid-template-areas:
 			"<?php echo($versionmoderne ? 'header' : '.'); ?> header header <?php echo($versionmoderne ? 'header' : '.'); ?>"
 			". content navigation ."
 			". content extra ."
@@ -564,7 +556,7 @@ case 33:
 case 34:
 ?>
 	#container {
-		grid-template-areas: 
+		grid-template-areas:
 			"<?php echo($versionmoderne ? 'header' : '.'); ?> header header <?php echo($versionmoderne ? 'header' : '.'); ?>"
 			". navigation content ."
 			". extra content ."
@@ -577,7 +569,7 @@ case 34:
 case 35:
 ?>
 	#container {
-		grid-template-areas: 
+		grid-template-areas:
 			"<?php echo($versionmoderne ? 'header' : '.'); ?> header header <?php echo($versionmoderne ? 'header' : '.'); ?>"
 			". content navigation ."
 			". extra navigation ."
@@ -590,7 +582,7 @@ case 35:
 case 36:
 ?>
 	#container {
-		grid-template-areas: 
+		grid-template-areas:
 			"<?php echo($versionmoderne ? 'header' : '.'); ?> header header <?php echo($versionmoderne ? 'header' : '.'); ?>"
 			". navigation content ."
 			". navigation extra ."
@@ -603,7 +595,7 @@ case 36:
 case 37:
 ?>
 	#container {
-		grid-template-areas: 
+		grid-template-areas:
 			"<?php echo($versionmoderne ? 'header' : '.'); ?> header header <?php echo($versionmoderne ? 'header' : '.'); ?>"
 			". content navigation ."
 			". extra extra ."
@@ -616,7 +608,7 @@ case 37:
 case 38:
 ?>
 	#container {
-		grid-template-areas: 
+		grid-template-areas:
 			"<?php echo($versionmoderne ? 'header' : '.'); ?> header header <?php echo($versionmoderne ? 'header' : '.'); ?>"
 			". navigation content ."
 			". extra extra ."
@@ -629,7 +621,7 @@ case 38:
 case 39:
 ?>
 	#container {
-		grid-template-areas: 
+		grid-template-areas:
 			"<?php echo($versionmoderne ? 'header' : '.'); ?> header header <?php echo($versionmoderne ? 'header' : '.'); ?>"
 			". content content ."
 			". navigation extra ."
@@ -642,7 +634,7 @@ case 39:
 case 40:
 ?>
 	#container {
-		grid-template-areas: 
+		grid-template-areas:
 			"<?php echo($versionmoderne ? 'header' : '.'); ?> header header <?php echo($versionmoderne ? 'header' : '.'); ?>"
 			". content content ."
 			". extra navigation ."
@@ -657,8 +649,8 @@ case 40:
 } /*fermeture de la mediaqueries 1160px */
 </style>
 <div id="container">
-<div id="header"><h1><img src='images/layout0<?php echo str_pad($layout, 2, '0', STR_PAD_LEFT) ?>.gif' />Layout n°<?=$layout?> (<?php echo "<a href='" . $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] 
-     . explode('?', $_SERVER['REQUEST_URI'], 2)[0] . "?layout=$layout'>"; ?>Classique</a> / <?php echo "<a href='" . $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] 
+<div id="header"><h1><img src='images/layout0<?php echo str_pad($layout, 2, '0', STR_PAD_LEFT) ?>.gif' />Layout n°<?=$layout?> (<?php echo "<a href='" . $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST']
+     . explode('?', $_SERVER['REQUEST_URI'], 2)[0] . "?layout=$layout'>"; ?>Classique</a> / <?php echo "<a href='" . $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST']
      . explode('?', $_SERVER['REQUEST_URI'], 2)[0] . "?layout=$layout&v=moderne'>"; ?>Moderne</a>)</h1>
 <h2>Retour à la <a href="./">page d'accueil</a></h2></div>
 <div id="wrapper">
@@ -682,7 +674,7 @@ case 40:
 <div class="layoutchoser">
 <?php
 for ($layout = 1; $layout <= 40; $layout++) {
-	echo "<a href='" . $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] 
+	echo "<a href='" . $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST']
      . explode('?', $_SERVER['REQUEST_URI'], 2)[0] . "?layout=$layout&v=$versionmoderne'><img src='images/layout0" . str_pad($layout, 2, '0', STR_PAD_LEFT) . ".gif' title='$layout' alt='$layout' /><span class='legend'>$layout</span></a>";
 }
 ?>
