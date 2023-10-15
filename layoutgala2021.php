@@ -32,12 +32,20 @@ div#header h1{margin:0;
  padding-right:10px;background: #EEE;color: #79B30B}
 #header img {vertical-align: top; padding: .25em 2em .25em 0;}
 div#content p{line-height:1.4}
+div#ariane{background:#666; color:#FFF; }
+div#titre{background:#888; color:#FF0; }
 div#navigation{background:#B9CAFF}
 div#extra{background:#FF8539}
 div#footer{background: #333;color: #FFF}
 div#footer p{margin:0;padding:5px 10px}
 div#content{background: #fff;}
+#header .banniere {
+	border: none;
+	padding:0;
+	width: 100%;
+}
 @media screen and (min-width: 1160px) {
+	<?php echo($versionmoderne ? '#maincontent { position: relative; margin-top: -100px; }' : ''); ?>
 	.layoutchoser {
 		position: fixed;
 		bottom: 0;
@@ -56,11 +64,25 @@ div#content{background: #fff;}
 @media screen and (min-width: 768px) {
 	#container {
 		display: grid;
+		grid-template-areas:
+			"header"
+			"maincontent"
+			"footer";
 	}
 
 
 	#header {
 		grid-area: header;
+	}
+	#maincontent {
+		grid-area: maincontent;
+		display: grid;
+	}
+	#ariane {
+		grid-area: ariane;
+	}
+	#titre {
+		grid-area: titre;
 	}
 	#footer {
 		grid-area: footer;
@@ -70,20 +92,13 @@ div#content{background: #fff;}
 		grid-area: navigation;
 	}
 
-	#wrapper{
+	#content{
 		grid-area: content;
-	}
-
-	#content {
-		display: grid;
-		height: 100%;
-		align-content: flex-start;
 	}
 
 	#extra{
 		grid-area: extra;
 	}
-
 
 /* un switch avec 2 types de cas  pour ipad*/
 <?php
@@ -116,16 +131,14 @@ switch ($layout){
 	case 36:
 	case 37:
 	case 38:
-	case 38:
 	case 39:
 ?>
-	#container {
+	#maincontent {
 		grid-template-areas:
-			"header header"
+			"ariane ariane"
+			"titre titre"
 			"content content"
-			"navigation extra"
-			"footer footer";
-		grid-template-rows: auto auto auto auto;
+			"navigation extra";
 		grid-template-columns: 1fr 1fr;
 	}
 
@@ -143,15 +156,15 @@ switch ($layout){
 	case 28:
 	case 40:
 ?>
-	#container {
+	#maincontent {
 		grid-template-areas:
-			"header header"
+			"ariane ariane"
+			"titre titre"
 			"content content"
-			"extra navigation"
-			"footer footer";
-		grid-template-rows: auto auto auto auto;
+			"extra navigation";
 		grid-template-columns: 1fr 1fr;
 	}
+
 
 <?php
 	break;
@@ -163,319 +176,338 @@ switch ($layout){
 @media screen and (min-width: 1160px) {
 /* ce switch pour desktop */
 <?php
-switch ($layout) {
-case 1:
+switch ($layout){
+	case 7:
+	case 8:
+	case 9:
+	case 10:
+	case 11:
+	case 12:
+	case 33:
+	case 34:
+	case 35:
+	case 36:
+	case 37:
+	case 38:
+	case 38:
+	case 39:
+	case 40:
 ?>
 	#container {
 		grid-template-areas:
-			"header header header"
-			"navigation content extra"
-			"footer footer footer";
-		grid-template-rows: auto auto auto;
+			"<?php echo($versionmoderne ? 'header' : '.'); ?> header <?php echo($versionmoderne ? 'header' : '.'); ?>"
+			". maincontent ."
+			"<?php echo($versionmoderne ? 'footer' : '.'); ?> footer <?php echo($versionmoderne ? 'footer' : '.'); ?>";
+		grid-template-columns: 1fr 1160px 1fr;
+	}
+
+<?php
+	break;
+	}
+
+switch ($layout){
+	case 23:
+	case 24:
+	case 25:
+	case 26:
+	case 33:
+	case 34:
+?>
+	#maincontent {
+		grid-template-rows: max-content max-content max-content 1fr;
+	}
+
+<?php
+	break;
+	}
+
+switch ($layout) {
+case 1:
+?>
+	#maincontent {
+		grid-template-areas:
+			"ariane ariane ariane"
+			"titre titre titre"
+			"navigation content extra";
 		grid-template-columns: 1fr 2fr 1fr;
 	}
 <?php
    break;
 case 2:
 ?>
-	#container {
+	#maincontent {
 		grid-template-areas:
-			"header header header"
-			"extra content navigation"
-			"footer footer footer";
-		grid-template-rows: auto auto auto;
+			"ariane ariane ariane"
+			"titre titre titre"
+			"extra content navigation";
 		grid-template-columns: 1fr 2fr 1fr;
 	}
 <?php
 	break;
 case 3:
 ?>
-	#container {
+	#maincontent {
 		grid-template-areas:
-			"header header header"
-			"content navigation extra"
-			"footer footer footer";
-		grid-template-rows: auto auto auto;
+			"ariane ariane ariane"
+			"titre titre titre"
+			"content navigation extra";
 		grid-template-columns: 2fr 1fr 1fr;
 	}
 <?php
 	break;
 case 4:
 ?>
-	#container {
+	#maincontent {
 		grid-template-areas:
-			"header header header"
-			"content extra navigation"
-			"footer footer footer";
-		grid-template-rows: auto auto auto;
+			"ariane ariane ariane"
+			"titre titre titre"
+			"content extra navigation";
 		grid-template-columns: 2fr 1fr 1fr;
 	}
 <?php
 	break;
 case 5:
 ?>
-	#container {
+	#maincontent {
 		grid-template-areas:
-			"header header header"
-			"navigation extra content"
-			"footer footer footer";
-		grid-template-rows: auto auto auto;
+			"ariane ariane ariane"
+			"titre titre titre"
+			"navigation extra content";
 		grid-template-columns: 1fr 1fr 2fr;
 	}
 <?php
 	break;
 case 6:
 ?>
-	#container {
+	#maincontent {
 		grid-template-areas:
-			"header header header"
-			"extra navigation content"
-			"footer footer footer";
-		grid-template-rows: auto auto auto;
+			"ariane ariane ariane"
+			"titre titre titre"
+			"extra navigation content";
 		grid-template-columns: 1fr 1fr 2fr;
 	}
 <?php
 	break;
 case 7:
 ?>
-	#container {
+	#maincontent {
 		grid-template-areas:
-			"<?php echo($versionmoderne ? 'header' : '.'); ?> header header header <?php echo($versionmoderne ? 'header' : '.'); ?>"
-			". navigation content extra ."
-			"<?php echo($versionmoderne ? 'footer' : '.'); ?> footer footer footer <?php echo($versionmoderne ? 'footer' : '.'); ?>";
-		grid-template-rows: auto auto auto;
-		grid-template-columns: auto 240px calc(1160px - 240px - 240px) 240px auto;
+			"ariane ariane ariane"
+			"titre titre titre"
+			"navigation content extra";
+		grid-template-columns: 240px 1fr 240px;
 	}
 <?php
 	break;
 case 8:
 ?>
-	#container {
+	#maincontent {
 		grid-template-areas:
-			"<?php echo($versionmoderne ? 'header' : '.'); ?> header header header <?php echo($versionmoderne ? 'header' : '.'); ?>"
-			". extra content navigation ."
-			"<?php echo($versionmoderne ? 'footer' : '.'); ?> footer footer footer <?php echo($versionmoderne ? 'footer' : '.'); ?>";
-		grid-template-rows: auto auto auto;
-		grid-template-columns: auto 240px calc(1160px - 240px - 240px) 240px auto;
+			"ariane ariane ariane"
+			"titre titre titre"
+			"extra content navigation";
+		grid-template-columns: 240px 1fr 240px;
 	}
 <?php
 	break;
 case 9:
 ?>
-	#container {
+	#maincontent {
 		grid-template-areas:
-			"<?php echo($versionmoderne ? 'header' : '.'); ?> header header header <?php echo($versionmoderne ? 'header' : '.'); ?>"
-			". content navigation extra ."
-			"<?php echo($versionmoderne ? 'footer' : '.'); ?> footer footer footer <?php echo($versionmoderne ? 'footer' : '.'); ?>";
-		grid-template-rows: auto auto auto;
-		grid-template-columns: auto calc(1160px - 240px - 240px) 240px 240px auto;
+			"ariane ariane ariane"
+			"titre titre titre"
+			"content navigation extra";
+		grid-template-columns: 1fr 240px 240px;
 	}
 <?php
 	break;
 case 10:
 ?>
-	#container {
+	#maincontent {
 		grid-template-areas:
-			"<?php echo($versionmoderne ? 'header' : '.'); ?> header header header <?php echo($versionmoderne ? 'header' : '.'); ?>"
-			". content extra navigation ."
-			"<?php echo($versionmoderne ? 'footer' : '.'); ?> footer footer footer <?php echo($versionmoderne ? 'footer' : '.'); ?>";
-		grid-template-rows: auto auto auto;
-		grid-template-columns: auto calc(1160px - 240px - 240px) 240px 240px auto;
+			"ariane ariane ariane"
+			"titre titre titre"
+			"content extra navigation";
+		grid-template-columns: 1fr 240px 240px;
 	}
 <?php
 	break;
 case 11:
 ?>
-	#container {
+	#maincontent {
 		grid-template-areas:
-			"<?php echo($versionmoderne ? 'header' : '.'); ?> header header header <?php echo($versionmoderne ? 'header' : '.'); ?>"
-			". navigation extra content ."
-			"<?php echo($versionmoderne ? 'footer' : '.'); ?> footer footer footer <?php echo($versionmoderne ? 'footer' : '.'); ?>";
-		grid-template-rows: auto auto auto;
-		grid-template-columns: auto 240px 240px calc(1160px - 240px - 240px) auto;
+			"ariane ariane ariane"
+			"titre titre titre"
+			"navigation extra content";
+		grid-template-columns: 240px 240px 1fr;
 	}
 <?php
 	break;
 case 12:
 ?>
-	#container {
+	#maincontent {
 		grid-template-areas:
-			"<?php echo($versionmoderne ? 'header' : '.'); ?> header header header <?php echo($versionmoderne ? 'header' : '.'); ?>"
-			". extra navigation content ."
-			"<?php echo($versionmoderne ? 'footer' : '.'); ?> footer footer footer <?php echo($versionmoderne ? 'footer' : '.'); ?>";
-		grid-template-rows: auto auto auto;
-		grid-template-columns: auto 240px 240px calc(1160px - 240px - 240px) auto;
+			"ariane ariane ariane"
+			"titre titre titre"
+			"extra navigation content";
+		grid-template-columns: 240px 240px 1fr;
 	}
 <?php
 	break;
 case 13:
 ?>
-	#container {
+	#maincontent {
 		grid-template-areas:
-			"header header header"
-			"navigation content extra"
-			"footer footer footer";
-		grid-template-rows: auto auto auto;
+			"ariane ariane ariane"
+			"titre titre titre"
+			"navigation content extra";
 		grid-template-columns: 240px 1fr 240px;
 	}
 <?php
 	break;
 case 14:
 ?>
-	#container {
+	#maincontent {
 		grid-template-areas:
-			"header header header"
-			"extra content navigation"
-			"footer footer footer";
-		grid-template-rows: auto auto auto;
+			"ariane ariane ariane"
+			"titre titre titre"
+			"extra content navigation";
 		grid-template-columns: 240px 1fr 240px;
 	}
 <?php
 	break;
 case 15:
 ?>
-	#container {
+	#maincontent {
 		grid-template-areas:
-			"header header header"
-			"content navigation extra"
-			"footer footer footer";
-		grid-template-rows: auto auto auto;
+			"ariane ariane ariane"
+			"titre titre titre"
+			"content navigation extra";
 		grid-template-columns: 1fr 240px 240px;
 	}
 <?php
 	break;
 case 16:
 ?>
-	#container {
+	#maincontent {
 		grid-template-areas:
-			"header header header"
-			"content extra navigation"
-			"footer footer footer";
-		grid-template-rows: auto auto auto;
+			"ariane ariane ariane"
+			"titre titre titre"
+			"content extra navigation";
 		grid-template-columns: 1fr 240px 240px;
 	}
 <?php
 	break;
 case 17:
 ?>
-	#container {
+	#maincontent {
 		grid-template-areas:
-			"header header header"
-			"extra navigation content"
-			"footer footer footer";
-		grid-template-rows: auto auto auto;
+			"ariane ariane ariane"
+			"titre titre titre"
+			"extra navigation content";
 		grid-template-columns: 240px 240px 1fr;
 	}
 <?php
 	break;
 case 18:
 ?>
-	#container {
+	#maincontent {
 		grid-template-areas:
-			"header header header"
-			"navigation extra content"
-			"footer footer footer";
-		grid-template-rows: auto auto auto;
+			"ariane ariane ariane"
+			"titre titre titre"
+			"navigation extra content";
 		grid-template-columns: 240px 240px 1fr;
 	}
 <?php
 	break;
 case 19:
 ?>
-	#container {
+	#maincontent {
 		grid-template-areas:
-			"header header header"
-			"navigation content extra"
-			"footer footer footer";
-		grid-template-rows: auto auto auto;
+			"ariane ariane ariane"
+			"titre titre titre"
+			"navigation content extra";
 		grid-template-columns: 240px 2fr 1fr;
 	}
 <?php
 	break;
 case 20:
 ?>
-	#container {
+	#maincontent {
 		grid-template-areas:
-			"header header header"
-			"navigation content extra"
-			"footer footer footer";
-		grid-template-rows: auto auto auto;
+			"ariane ariane ariane"
+			"titre titre titre"
+			"navigation content extra";
 		grid-template-columns: 1fr 2fr 240px;
 	}
 <?php
 	break;
 case 21:
 ?>
-	#container {
+	#maincontent {
 		grid-template-areas:
-			"header header header"
-			"content navigation extra"
-			"footer footer footer";
-		grid-template-rows: auto auto auto;
+			"ariane ariane ariane"
+			"titre titre titre"
+			"content navigation extra";
 		grid-template-columns: 2fr 240px 1fr;
 	}
 <?php
 	break;
 case 22:
 ?>
-	#container {
+	#maincontent {
 		grid-template-areas:
-			"header header header"
-			"content navigation extra"
-			"footer footer footer";
-		grid-template-rows: auto auto auto;
+			"ariane ariane ariane"
+			"titre titre titre"
+			"content navigation extra";
 		grid-template-columns: 2fr 1fr 240px;
 	}
 <?php
 	break;
 case 23:
 ?>
-	#container {
+	#maincontent {
 		grid-template-areas:
-			"header header"
+			"ariane ariane"
+			"titre titre"
 			"content navigation"
-			"content extra"
-			"footer footer";
-		grid-template-rows: auto auto 1fr auto;
+			"content extra";
 		grid-template-columns: 1fr 240px;
 	}
 <?php
 	break;
 case 24:
 ?>
-	#container {
+	#maincontent {
 		grid-template-areas:
-			"header header"
+			"ariane ariane"
+			"titre titre"
 			"navigation content"
-			"extra content"
-			"footer footer";
-		grid-template-rows: auto auto 1fr auto;
+			"extra content";
 		grid-template-columns: 240px 1fr;
 	}
 <?php
 	break;
 case 25:
 ?>
-	#container {
+	#maincontent {
 		grid-template-areas:
-			"header header"
+			"ariane ariane"
+			"titre titre"
 			"content navigation"
-			"content extra"
-			"footer footer";
-		grid-template-rows: auto auto 1fr auto;
+			"content extra";
 		grid-template-columns: 2fr 1fr;
 	}
 <?php
 	break;
 case 26:
 ?>
-	#container {
+	#maincontent {
 		grid-template-areas:
-			"header header"
+			"ariane ariane"
+			"titre titre"
 			"navigation content"
-			"extra content"
-			"footer footer";
-		grid-template-rows: auto auto 1fr auto;
+			"extra content";
 		grid-template-columns: 1fr 2fr;
 	}
 <?php
@@ -490,158 +522,130 @@ case 28:
 	break;
 case 29:
 ?>
-	#container {
+	#maincontent {
 		grid-template-areas:
-			"header header"
+			"ariane ariane"
+			"titre titre"
 			"navigation content"
-			"extra extra"
-			"footer footer";
-		grid-template-rows: auto auto auto auto;
+			"extra extra";
 		grid-template-columns: 1fr 2fr;
 	}
 <?php
 	break;
 case 30:
 ?>
-	#container {
+	#maincontent {
 		grid-template-areas:
-			"header header"
+			"ariane ariane"
+			"titre titre"
 			"content navigation"
-			"extra extra"
-			"footer footer";
-		grid-template-rows: auto auto auto auto;
+			"extra extra";
 		grid-template-columns: 2fr 1fr;
 	}
 <?php
 	break;
 case 31:
 ?>
-	#container {
+	#maincontent {
 		grid-template-areas:
-			"header header"
+			"ariane ariane"
+			"titre titre"
 			"navigation content"
-			"extra extra"
-			"footer footer";
-		grid-template-rows: auto auto auto auto;
+			"extra extra";
 		grid-template-columns: 240px 1fr;
 	}
 <?php
 	break;
 case 32:
 ?>
-	#container {
+	#maincontent {
 		grid-template-areas:
-			"header header"
+			"ariane ariane"
+			"titre titre"
 			"content navigation"
-			"extra extra"
-			"footer footer";
-		grid-template-rows: auto auto auto auto;
+			"extra extra";
 		grid-template-columns: 1fr 240px;
 	}
 <?php
 	break;
 case 33:
 ?>
-	#container {
+	#maincontent {
 		grid-template-areas:
-			"<?php echo($versionmoderne ? 'header' : '.'); ?> header header <?php echo($versionmoderne ? 'header' : '.'); ?>"
-			". content navigation ."
-			". content extra ."
-			"<?php echo($versionmoderne ? 'footer' : '.'); ?> footer footer <?php echo($versionmoderne ? 'footer' : '.'); ?>";
-		grid-template-rows: auto auto 1fr auto;
-		grid-template-columns: auto calc(1160px - 240px) 240px auto;
+			"ariane ariane"
+			"titre titre"
+			"content navigation"
+			"content extra";
+		grid-template-columns: 1fr 240px;
 	}
 <?php
 	break;
 case 34:
 ?>
-	#container {
+	#maincontent {
 		grid-template-areas:
-			"<?php echo($versionmoderne ? 'header' : '.'); ?> header header <?php echo($versionmoderne ? 'header' : '.'); ?>"
-			". navigation content ."
-			". extra content ."
-			"<?php echo($versionmoderne ? 'footer' : '.'); ?> footer footer <?php echo($versionmoderne ? 'footer' : '.'); ?>";
-		grid-template-rows: auto auto 1fr auto;
-		grid-template-columns: auto 240px calc(1160px - 240px) auto;
+			"ariane ariane"
+			"titre titre"
+			"navigation content"
+			"extra content";
+		grid-template-columns: 240px 1fr;
 	}
 <?php
 	break;
 case 35:
 ?>
-	#container {
+	#maincontent {
 		grid-template-areas:
-			"<?php echo($versionmoderne ? 'header' : '.'); ?> header header <?php echo($versionmoderne ? 'header' : '.'); ?>"
-			". content navigation ."
-			". extra navigation ."
-			"<?php echo($versionmoderne ? 'footer' : '.'); ?> footer footer <?php echo($versionmoderne ? 'footer' : '.'); ?>";
-		grid-template-rows: auto auto 1fr auto;
-		grid-template-columns: auto calc(1160px - 240px) 240px auto;
+			"ariane ariane"
+			"titre titre"
+			"content navigation"
+			"extra navigation";
+		grid-template-columns: 1fr 240px;
 	}
 <?php
 	break;
 case 36:
 ?>
-	#container {
+	#maincontent {
 		grid-template-areas:
-			"<?php echo($versionmoderne ? 'header' : '.'); ?> header header <?php echo($versionmoderne ? 'header' : '.'); ?>"
-			". navigation content ."
-			". navigation extra ."
-			"<?php echo($versionmoderne ? 'footer' : '.'); ?> footer footer <?php echo($versionmoderne ? 'footer' : '.'); ?>";
-		grid-template-rows: auto auto 1fr auto;
-		grid-template-columns: auto 240px calc(1160px - 240px) auto;
+			"ariane ariane"
+			"titre titre"
+			"navigation content"
+			"navigation extra";
+		grid-template-columns: 240px 1fr;
 	}
 <?php
 	break;
 case 37:
 ?>
-	#container {
+	#maincontent {
 		grid-template-areas:
-			"<?php echo($versionmoderne ? 'header' : '.'); ?> header header <?php echo($versionmoderne ? 'header' : '.'); ?>"
-			". content navigation ."
-			". extra extra ."
-			"<?php echo($versionmoderne ? 'footer' : '.'); ?> footer footer <?php echo($versionmoderne ? 'footer' : '.'); ?>";
-		grid-template-rows: auto auto 1fr auto;
-		grid-template-columns: auto calc(1160px - 240px) 240px auto;
+			"ariane ariane"
+			"titre titre"
+			"content navigation"
+			"extra extra";
+		grid-template-columns: 1fr 240px;
 	}
 <?php
 	break;
 case 38:
 ?>
-	#container {
+	#maincontent {
 		grid-template-areas:
-			"<?php echo($versionmoderne ? 'header' : '.'); ?> header header <?php echo($versionmoderne ? 'header' : '.'); ?>"
-			". navigation content ."
-			". extra extra ."
-			"<?php echo($versionmoderne ? 'footer' : '.'); ?> footer footer <?php echo($versionmoderne ? 'footer' : '.'); ?>";
-		grid-template-rows: auto auto 1fr auto;
-		grid-template-columns: auto 240px calc(1160px - 240px) auto;
+			"ariane ariane"
+			"titre titre"
+			"navigation content"
+			"extra extra";
+		grid-template-columns: 240px 1fr;
 	}
 <?php
 	break;
 case 39:
 ?>
-	#container {
-		grid-template-areas:
-			"<?php echo($versionmoderne ? 'header' : '.'); ?> header header <?php echo($versionmoderne ? 'header' : '.'); ?>"
-			". content content ."
-			". navigation extra ."
-			"<?php echo($versionmoderne ? 'footer' : '.'); ?> footer footer <?php echo($versionmoderne ? 'footer' : '.'); ?>";
-		grid-template-rows: auto auto auto auto;
-		grid-template-columns: auto calc(1160px / 2) calc(1160px / 2) auto;
-	}
 <?php
 	break;
 case 40:
 ?>
-	#container {
-		grid-template-areas:
-			"<?php echo($versionmoderne ? 'header' : '.'); ?> header header <?php echo($versionmoderne ? 'header' : '.'); ?>"
-			". content content ."
-			". extra navigation ."
-			"<?php echo($versionmoderne ? 'footer' : '.'); ?> footer footer <?php echo($versionmoderne ? 'footer' : '.'); ?>";
-		grid-template-rows: auto auto auto auto;
-		grid-template-columns: auto calc(1160px / 2) calc(1160px / 2) auto;
-	}
 <?php
 	break;
 }
@@ -649,27 +653,32 @@ case 40:
 } /*fermeture de la mediaqueries 1160px */
 </style>
 <div id="container">
-<div id="header"><h1><img src='images/layout0<?php echo str_pad($layout, 2, '0', STR_PAD_LEFT) ?>.gif' />Layout n°<?=$layout?> (<?php echo "<a href='" . $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST']
-     . explode('?', $_SERVER['REQUEST_URI'], 2)[0] . "?layout=$layout'>"; ?>Classique</a> / <?php echo "<a href='" . $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST']
-     . explode('?', $_SERVER['REQUEST_URI'], 2)[0] . "?layout=$layout&v=moderne'>"; ?>Moderne</a>)</h1>
-<h2>Retour à la <a href="./">page d'accueil</a></h2></div>
-<div id="wrapper">
-<div id="content">
-<p><strong>1) Content here.</strong> column long long column very long fill fill fill long text text column text silly very make long very fill silly make make long make text fill very long text column silly silly very column long very column filler fill long make filler long silly very long silly silly silly long filler make column filler make silly long long fill very.</p>
-<p>very make make fill silly long long filler column long make silly silly column filler fill fill very filler text fill filler column make fill make text very make make very fill fill long make very filler column very long very filler silly very make filler silly make make column column </p>
-<p>fill long make long text very make long fill column make text very silly column filler silly text fill text filler filler filler make make make make text filler fill column filler make silly make text text fill make very filler column very </p>
-<p>column text long column make silly long text filler silly very very very long filler fill very fill silly very make make filler text filler text make silly text text long fill fill make text fill long text very silly long long filler filler fill silly long make column make silly long column long make very </p>
-</div>
-</div>
-<div id="navigation">
-<p><strong>2) Navigation here.</strong> long long fill filler very fill column column silly filler very filler fill fill filler text fill very silly fill text filler silly silly filler fill very make fill column text column very very column fill fill very silly column silly silly fill fill long filler </p>
-</div>
-<div id="extra">
-<p><strong>3) More stuff here.</strong> very text make long silly make text very very text make long filler very make column make silly column fill silly column long make silly filler column filler silly long long column fill silly column very </p>
-</div>
-<div id="footer">
-<h1>Choose the layout</h1>
-</div>
+	<div id="header">
+		<h1><img src='images/layout0<?php echo str_pad($layout, 2, '0', STR_PAD_LEFT) ?>.gif' />Layout n°<?=$layout?> (<?php echo "<a href='" . $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST']
+		 . explode('?', $_SERVER['REQUEST_URI'], 2)[0] . "?layout=$layout'>"; ?>Classique</a> / <?php echo "<a href='" . $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST']
+		 . explode('?', $_SERVER['REQUEST_URI'], 2)[0] . "?layout=$layout&v=moderne'>"; ?>Moderne</a>)</h1>
+		<h2>Retour à la <a href="./">page d'accueil</a></h2>
+		<img src="images/ban.jpg" class="banniere" alt="" width="1920" height="300">
+	</div>
+	<div id="maincontent">
+		<div id="ariane">Ariane > Paf !</div>
+		<div id="titre">Le titre de la page</div>
+		<div id="content">
+			<p><strong>1) Content here.</strong> column long long column very long fill fill fill long text text column text silly very make long very fill silly make make long make text fill very long text column silly silly very column long very column filler fill long make filler long silly very long silly silly silly long filler make column filler make silly long long fill very.</p>
+			<p>very make make fill silly long long filler column long make silly silly column filler fill fill very filler text fill filler column make fill make text very make make very fill fill long make very filler column very long very filler silly very make filler silly make make column column </p>
+			<p>fill long make long text very make long fill column make text very silly column filler silly text fill text filler filler filler make make make make text filler fill column filler make silly make text text fill make very filler column very </p>
+			<p>column text long column make silly long text filler silly very very very long filler fill very fill silly very make make filler text filler text make silly text text long fill fill make text fill long text very silly long long filler filler fill silly long make column make silly long column long make very </p>
+		</div>
+		<div id="navigation">
+			<p><strong>2) Navigation here.</strong> long long fill filler very fill column column silly filler very filler fill fill filler text fill very silly fill text filler silly silly filler fill very make fill column text column very very column fill fill very silly column silly silly fill fill long filler </p>
+		</div>
+		<div id="extra">
+			<p><strong>3) More stuff here.</strong> very text make long silly make text very very text make long filler very make column make silly column fill silly column long make silly filler column filler silly long long column fill silly column very </p>
+		</div>
+	</div>
+	<div id="footer">
+		<h1>Choose the layout</h1>
+	</div>
 </div>
 <div class="layoutchoser">
 <?php
